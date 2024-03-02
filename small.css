@@ -1,0 +1,153 @@
+@font-face {
+   font-family: BIZGothic;
+   src: url(fonts/BIZUDGothic-Regular.ttf);
+ }
+
+main{
+   font-family: BIZGothic;
+}
+
+header {
+   font-size:large;
+   font-family:'BIZGothic';
+}
+
+ button {
+   background: none!important;
+   border: none;
+   padding: 0!important;
+   /*optional*/
+   font-family: 'BIZGothic';
+   /*input has OS specific font-family*/
+   color: rgb(0, 0, 0);
+   text-decoration: none;
+   cursor:pointer;
+   font-size:medium;
+   text-wrap:wrap;
+ }
+
+ button:hover{
+   background-color: red !important;
+   transition: all .3s ease-in-out !important;
+ }
+
+ body{
+   margin-top:20px;
+   margin-left:20px;
+ }
+
+.contents{
+   height:100%;
+   width:300px;
+   position:fixed;
+   z-index:1;
+   top:0;
+   left:0;
+   overflow-x:hidden;
+   margin-top: 20px;
+   margin-left:20px;
+}
+
+.box {
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   padding-top: 100px;   
+   padding-left:300px;
+   flex-direction: column;
+   width: 50%;
+   line-height: 2;
+
+}
+
+.FlexMonte{
+   display:block;
+   align-items: center;
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexBuffet{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexMaillard{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+
+.FlexHistorical{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexCowlick{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexPrague{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexLincoln{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexPictureWindow{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexUnderpainting{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}
+.FlexSatellite{
+   display:block;
+   align-items: center;   
+   justify-content: center;
+   padding-left:20px;
+   padding-right:50px;
+   font-size: medium;
+   font-family: BIZGothic;
+}

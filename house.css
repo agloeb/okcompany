@@ -1,0 +1,11 @@
+.imgwrap img {
+   position:absolute;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   overflow:hidden!important;
+   margin:auto;
+   left:0;
+   right:0;
+   display: block;
+  }
