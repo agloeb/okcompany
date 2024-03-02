@@ -1,0 +1,34 @@
+/*body*/
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imgwrap img {
+   position:absolute;
+   align-items: center;
+   justify-content: center;
+   padding-top:80px;
+   overflow:hidden!important;
+   margin:auto;
+   left:0;
+   right:0;
+   z-index: 2;
+  }
+  .highlights{
+   width:700;
+   height:auto;
+   z-index: 1;
+   position:absolute;
+   justify-content: center !important;
+   align-items: center !important;
+   margin:auto;
+   left:0;
+   right:0;
+   opacity: 0;
+
+  }
+  .highlights:hover{
+   opacity: 1;
+   z-index: 20;
+  }

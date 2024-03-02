@@ -1,0 +1,153 @@
+/*body*/
+@font-face {
+  font-family: 'BIZGothic';
+  src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+
+.box {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position:absolute;
+   width:95%;
+   overflow: hidden !important;;
+   font-family: 'BIZGothic';
+
+ }
+ .imgwrap img {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    max-width: auto; 
+    max-height: 90vh; 
+    overflow: hidden !important;;
+ }
+
+ /*screens*/
+ .flex-container {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: stretch;
+   position: relative;
+   font-family: 'BIZGothic';
+ }
+ 
+ .flex-items:nth-child(1) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(2) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(3) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(4) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(5) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(6) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(7) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(8) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(9) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(10) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(11) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(12) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
+ 
+ .flex-items:nth-child(13) {
+   display: block;
+   flex-grow: 0;
+   flex-shrink: 1;
+   flex-basis: auto;
+   align-self: auto;
+   order: 0;
+ }
