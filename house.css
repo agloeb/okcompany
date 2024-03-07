@@ -9,3 +9,7 @@
    right:0;
    display: block;
   }
+
+.areaNoClick{
+   cursor:default;
+}
