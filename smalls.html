@@ -1,7 +1,8 @@
 <!--To add text:
-1. Copy/paste toggleFlexN function. Update N and change element id to "FlexTITLEofSMALL"
+1. Copy/paste toggleFlexN function. Add 1 to N and change element id to "FlexTITLEofSMALL" and ClassName ('SansTITLE')
 2. Copy/paste title button and change toggleFlex number
-3. Copy/paste text div and update div id to "FlexTITLEofSMALL"-->
+3. Copy/paste text div and update div id to "FlexTITLEofSMALL"
+4. Add class="SansTITLE" to every other text block-->
 
 <!DOCTYPE html>
 <html>
@@ -10,96 +11,168 @@
 <script>
     function toggleFlex1() {
         var text = document.getElementById("FlexMonte");
+        var text2 = document.getElementsByClassName('SansMonte');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex2() {
         var text = document.getElementById("FlexBuffet");
+        var text2 = document.getElementsByClassName('SansBuffet');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex3() {
         var text = document.getElementById("FlexMaillard");
+        var text2 = document.getElementsByClassName('SansMaillard');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex4() {
         var text = document.getElementById("FlexCowlick");
+        var text2 = document.getElementsByClassName('SansCowlick');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex5() {
         var text = document.getElementById("FlexHistorical");
+        var text2 = document.getElementsByClassName('SansHistorical');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex6() {
         var text = document.getElementById("FlexPrague");
+        var text2 = document.getElementsByClassName('SansPrague');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex7() {
         var text = document.getElementById("FlexLicoln");
+        var text2 = document.getElementsByClassName('SansLincoln');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex8() {
         var text = document.getElementById("FlexPictureWindow");
+        var text2 = document.getElementsByClassName('SansWindow');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex9() {
         var text = document.getElementById("FlexUnderpainting");
+        var text2 = document.getElementsByClassName('SansUnderpainting');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex10() {
         var text = document.getElementById("FlexSatellite");
+        var text2 = document.getElementsByClassName('SansSatellite');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex11() {
         var text = document.getElementById("FlexCoyotes");
+        var text2 = document.getElementsByClassName('SansCoyotes');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
     }
     function toggleFlex12() {
         var text = document.getElementById("FlexHideout");
+        var text2 = document.getElementsByClassName('SansHideout');
+        for (i = 0; i < text2.length; i++) {
+            text2[i].style.display='none';
+            text2[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            text2.style.display = "none";
         } else {
             text.style.display = "none";
         }
@@ -109,7 +182,7 @@
     </head>
     <div class="contents">
         <header>
-            <a href="index.html">
+            <a href="house.html">
                 <img src="img/quality ring/qualityOK_notagline.png" width="100" height="100"
                 onmouseover="this.src='img/quality ring/REDqualityOKwink_notagline.png';"
                 onmouseout="this.src='img/quality ring/qualityOK_notagline.png';">
@@ -146,11 +219,13 @@
         </div>       
     </div>
     <div class="box"><!--text blocks-->
-        <div id="FlexMonte" style="display: none;">
+        <div class="SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow"
+        id="FlexMonte" style="display: none;">
             <p>Federico doesn’t like his remote control Monte Carlo like he thought he would. 
                 The plastic spinners spun but looked like shit and the cardboard box had no window forviewing, just we believe everyone everywhere, THAT’s why we invented the functional lowrider at 1/4 scale across the box Buddy complimented in the hobby shop as the clerk demonstrated four hydraulic sequences. But now Federico doesn’t like the RC like he thought so he’s asking full price, never used but for demo, box in tact, tuned up with silver trumpet inside.</p>
         </div>
-        <div id="FlexBuffet" style="display: none;">
+        <div class="SansMonte SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow" 
+        id="FlexBuffet" style="display: none;">
             <p>Like I said I ain’t an artist but I’ve learned
                 How to use shipping and parcel packing services
                 For the way I want to. For the way it gets done
@@ -159,32 +234,39 @@
                 With the tracks all busted out. So like I said
                 I ain’t an artist but I got the buffet second hand.</p>
         </div>
-        <div id="FlexMaillard" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansPrague SansSatellite SansUnderpainting SansWindow"
+        id="FlexMaillard" style="display: none;">
             <p>For browing the quails I like to get my skillet quiet and calm by removing it from the house for a while and making it walk out to the pasture with the cattle. Most of them are going to the sale barn next week and I’m going to wear my pearls and loafers something different than before since they have been such fine cattle. Skillet can get out there and understand what it means to load big creatures up and drive double clutch to Bellville and back in loafers. Late at night after you got a wasp in your pop in your mouth inside your back cheek. </p>
         </div>
-        <div id="FlexCowlick" style="display: none;">
+        <div class="SansMonte SansCoyotes SansBuffet SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow" 
+        id="FlexCowlick" style="display: none;">
             <p>Wind blows through the wind break whether or not my cowlick stays down and every time I’m panicked by it. Every one of the swallows sit still for a minute on top of the grain bins watching me freak. It doesn’t bother my brother. He carries on painting pterodactyls flying by moons when I come in. Whenever I walk in his room he acts like its a whole crowd saying This one goes out to the three old ladies in the back. You know who you are. He did the same thing when I forgot to drop the auger and snapped the power line. That one was for the three old ladies in the back. We had to pull out the kerosene lamps from under the stairs to make supper. <br><br>We’re going to the Paul Boyer Animated Carvings Museum. My brother always takes me to muzams when things get slow and with the line still down its slower yet. Besides the High Banks Hall of Fame National Midget Auto Racing Museum this one with all the wooden drummers and potbelly dancers is where he likes to take me. Exposed metal rods pump up into knees and elbows. Wobbling dummy heads with no one attending the room. The action is smooth everywhere in there. 
             </p>
         </div>
-        <div id="FlexHistorical" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansLincoln SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow" 
+        id="FlexHistorical" style="display: none;">
             <p>Once we’ve done one, the rest of the hills are just replicas. Perfectly mapped out and plastered to a semi-gloss finish. Repeating mounds eight feet tall at their peak with thirty-two inch gaps from base to base. Let your ducks lose in there see how long it’ll take to find them. No more waking up with the blathering and slip slap feet on my flat roof.  </p>
         </div>
-        <div id="FlexPrague" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansSatellite SansUnderpainting SansWindow"
+        id="FlexPrague" style="display: none;">
             <p>After reading the Joy of Cooking we’re going to bring out the military drums play a little percussion for the people in the park. Whole town and only a few of them got the christmas lights out and the inflatable santa hanging from the library trailer home. All the shelves were gifted by people moving out of town.
                 <br><br>
                 Today we learned about meat pastries and meat pie toppings thinking we could do something extravagent like that for the community luncheon. Meat pies is where the true cuisine of the country dwells. 
                 <br><br>
                 Everyone tells the drummers vitame vas when they get in line with their styrofoam plates. We got our drums and rocking chairs stored in the basement where we have these kind of meals and drink wine coolers. I don’t suspect anything is laying there under the Church of Our Lady before Tyn. </p>
         </div>
-        <div id="FlexPictureWindow" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansSatellite SansUnderpainting"
+        id="FlexPictureWindow" style="display: none;">
             <p>I wanted to kill those birds from the picture window with the .22 hidden in the pocket above the bathroom. Shoot them right through the picture window we watch the tornado from before going down to the dirt floor cellar. 
                 <br><br>
                 I want to kill those brids from the porch. I want to kill them through the picture window we watch the tornado from before going back down to the dirt floor in the cellar. I’ll kill them after I wake up with dirt still on my knees, with the .22 hidden in the pocket in the ceiling. </p>
         </div>
-        <div id="FlexLicoln" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow"
+        id="FlexLicoln" style="display: none;">
             <p>My next selection will be kawaski my next selection will be kawaski my next selection will be my first selection is down the test tunnel getting blasted by fans like it’s upstairs in the summer.</p>
         </div>
-        <div id="FlexUnderpainting" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansSatellite SansWindow"
+        id="FlexUnderpainting" style="display: none;">
             <p>
                 Yikes. The way the shower paint—<br>
                 Looks like an underpainting.<br>
@@ -197,14 +279,17 @@
                 Shallot says there’s a lot of crazy shit in those big tubes, like spyware and cameras we ain’t never seen before. For me, I would just like to see him trying to explain it all when we reach for techno-glory and get a three-hundred foot ladder. He’s so worried about one of the arms flying off and stabbing him while he’s working in the field. Hundred foot blade stabbing him. Thru him and into the dirt of his cedar covered eighty acres. 
             </p>
         </div>
-        <div id="FlexSatellite" style="display: none;">
+        <div class="SansMonte SansCowlick SansBuffet SansCoyotes SansHideout SansHistorical SansLincoln SansMaillard SansPrague SansUnderpainting SansWindow"
+        id="FlexSatellite" style="display: none;">
             <p>C-Band satellite in the way already In the for now, for now it’s coming down, wait, in its behavior it’s O! My C-Band issues taking ages in the for now, windbreak for now, please, there’s life without building but nothing, without my satellite. </p>
         </div>
-        <div id="FlexCoyotes" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansHideout SansHistorical SansLincoln SansPrague SansMaillard SansPrague SansSatellite SansUnderpainting SansWindow"
+        id="FlexCoyotes" style="display: none;">
             <p>Coyotes are scaredy cats that’s why they walk in packs in the fields and scream. Nothing has spooked them yet so they cry an anticipatory cry to beat their own fear to the punch. Recently though they’ve been coming up to the porch in the early mornings. It has something to do with their size getting bigger and bigger. They used to be able to watch us from below the alfalfa line and now we shoot them from the back of the truck driving in squares around Elm 30 Fir 31. Blasting  ripped mp3s of their cries over the speakers produces a wild effect further down by Granite and Hickory, two sections past the house where they scream navigating through the old outbuildings.  
             </p>
         </div>
-        <div id="FlexHideout" style="display: none;">
+        <div class="SansMonte SansBuffet SansCowlick SansCoyotes SansHistorical SansLincoln SansMaillard SansLincoln SansPrague SansSatellite SansUnderpainting SansWindow"
+        id="FlexHideout" style="display: none;">
             <p>Pending the council’s decision, my whereabouts are going to be limited to the VFW which I had builit out with a little room wide enough for me to roll over from my back to belly and tall enough for me to stand three quarters and just long enough. Pending that whole deal I’ll be back there with plenty to keep me occupied like the stamp price arguments I can hear through the pencil hole I made in the back wall connected to the post office. That’s where it’s all going to be once I’m pent. </p>
         </div>
     </div>
