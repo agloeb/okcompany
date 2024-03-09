@@ -43,10 +43,45 @@
     text.style.display = "none";
   }
 }
+//*FLEX IMAGES*//
     function toggleFlex1() {
         var text = document.getElementById("FlexHeadhouse");
+        var other = document.getElementsByClassName("sansHead");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
         if (text.style.display === "none") {
             text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex2() {
+        var text = document.getElementById("FlexCornflake");
+        var other = document.getElementsByClassName("sansCornflake");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex3() {
+        var text = document.getElementById("FlexTarp");
+        var other = document.getElementsByClassName("sansTarp");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
         } else {
             text.style.display = "none";
         }
@@ -55,7 +90,7 @@
     </head>
     <div class="contents">
         <header>
-            <a href="index.html">
+            <a href="house.html">
                 <img src="img/quality ring/qualityOK.png" width="100" height="100"
                 onmouseover="this.src='img/quality ring/REDqualityOKwink.png';"
                 onmouseout="this.src='img/quality ring/qualityOK.png';">
@@ -67,15 +102,15 @@
         <button onclick="toggleText1()">elevator</button>
             <div id="textField1" style="display: none;">
                 <button onclick="toggleFlex1()">.......headhouse</button>
-                <div id="tab">.......cornflake</div>
-                <div id="tab">.......putting tires on the tarp</div>
+                <br>
+                <button onclick="toggleFlex2()">.......cornflake</button>
+                <br>
+                <button onclick="toggleFlex3()">.......putting tires on the tarp</button>
             </div> 
             <br><br>
         <button onclick="toggleText3()">dowsing</button>
             <div id="textField3" style="display: none;">
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
+                <div id="tab">.......making your final selection</div>
             </div>
             <br><br>
         <button onclick="toggleText4()">loop</button>
@@ -87,9 +122,7 @@
             <br><br>
         <button onclick="toggleText5()">table of contents</button>
             <div id="textField5" style="display: none;">
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
+                <div id="tab">.......Chapter 3</div>
             </div>
             <br><br>
         <button onclick="toggleText6()">innards and ethernice</button>
@@ -100,8 +133,14 @@
             </div>
     </div class="contents">
     <div class="box">
-        <div id="FlexHeadhouse" style="display: none;">
-            <img src="img/posthalftone.png">
+        <div class="sansTarp sansCornflake" id="FlexHeadhouse" style="display: none;">
+            <img src="img/headhouse.png">
+        </div>
+        <div class="sansHead sansTarp" id="FlexCornflake" style="display: none;">
+            <img src="img/cornflake.png">
+        </div>
+        <div class="sansHead sansCornflake" id="FlexTarp" style="display: none;">
+            <img src="img/tarps.png" width="386px" height="328px">
         </div>
     </div>
     <main>
