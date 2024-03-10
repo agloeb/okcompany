@@ -1,0 +1,46 @@
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+  }
+ 
+ main{
+    font-family: BIZGothic;
+ }
+ 
+ header {
+    font-size:large;
+    font-family:'BIZGothic';
+ }
+ 
+ .contents{
+    height:100%;
+    width:300px;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    overflow-x:hidden;
+    margin-top: 20px;
+    margin-left:20px;
+}
+
+.box {
+    display:flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding-top:100px;
+    padding-left: 300px;
+    padding-right: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ .FlexMUD{
+    display:block;
+    flex-basis:50%;
+}
+
+.FlexOK{
+    display:block;
+    flex-basis:50%;
+}
