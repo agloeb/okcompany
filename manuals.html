@@ -86,6 +86,48 @@
             text.style.display = "none";
         }
     }
+    function toggleFlex4() {
+        var text = document.getElementById("FlexAsk");
+        var other = document.getElementsByClassName("sansAsk");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex5() {
+        var text = document.getElementById("FlexAsk2");
+        var other = document.getElementsByClassName("sansAsk2");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex6() {
+        var text = document.getElementById("FlexAsk3");
+        var other = document.getElementsByClassName("sansAsk3");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
 </script>       
     </head>
     <div class="contents">
@@ -110,37 +152,50 @@
             <br><br>
         <button onclick="toggleText3()">dowsing</button>
             <div id="textField3" style="display: none;">
-                <div id="tab">.......making your final selection</div>
+                <button onclick="toggleFlex4()">.......making your final selection</button>
+                <br>
+                <button onclick="toggleFlex5()">.......making your next selection</button>
+                <br>
+                <button onclick="toggleFlex6()">.......reselection</button>
             </div>
             <br><br>
         <button onclick="toggleText4()">loop</button>
             <div id="textField4" style="display: none;">
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
-                <div id="tab">.......Queenie's</div>
+                <button onclick="toggleFlex5">.......panelling on plaster</button><br>
+                <button onclick="toggleFlex6">.......panelling on plaster</button><br>
+                <button onclick="toggleFlex7">.......panelling on plaster</button>
             </div>
             <br><br>
         <button onclick="toggleText5()">table of contents</button>
             <div id="textField5" style="display: none;">
-                <div id="tab">.......Chapter 3</div>
+                <button id="tab">.......Chapter 3</button>
             </div>
             <br><br>
         <button onclick="toggleText6()">innards and ethernice</button>
             <br><br>
         <button onclick="toggleText2()">COE</button>
             <div id="textField2" style="display: none;">
-                <div id="tab">.......Transtar</div>
+                <button id="tab">.......Transtar</button>
             </div>
     </div class="contents">
     <div class="box">
-        <div class="sansTarp sansCornflake" id="FlexHeadhouse" style="display: none;">
+        <div class="sansTarp sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexHeadhouse" style="display: none;">
             <img src="img/headhouse.png">
         </div>
-        <div class="sansHead sansTarp" id="FlexCornflake" style="display: none;">
+        <div class="sansHead sansTarp sansAsk sansAsk2 sansAsk3" id="FlexCornflake" style="display: none;">
             <img src="img/cornflake.png">
         </div>
-        <div class="sansHead sansCornflake" id="FlexTarp" style="display: none;">
-            <img src="img/tarps.png" width="386px" height="328px">
+        <div class="sansHead sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexTarp" style="display: none;">
+            <img src="img/tarps2.png" width="386px" height="328px">
+        </div>
+        <div class="sansHead sansCornflake sansTarp sansAsk2 sansAsk3" id="FlexAsk" style="display: none;">
+            <img src="img/askforwhat.png">
+        </div>
+        <div class="sansHead sansCornflake sansTarp sansAsk sansAsk3" id="FlexAsk2" style="display: none;">
+            <img src="img/askforwhat2.png">
+        </div>
+        <div class="sansHead sansCornflake sansTarp sansAsk sansAsk2" id="FlexAsk3" style="display: none;">
+            <img src="img/queenie.png">
         </div>
     </div>
     <main>
