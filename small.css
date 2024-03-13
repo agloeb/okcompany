@@ -10,6 +10,9 @@ main{
 header {
    font-size:large;
    font-family:'BIZGothic';
+   position:sticky;
+   top: 0;
+   background-color: white;
 }
 
  button {
@@ -53,101 +56,8 @@ header {
    align-items: center;
    justify-content: center;
    padding-top: 100px;   
-   padding-left:300px;
+   padding-left:400px;
    flex-direction: column;
    width: 50%;
    line-height: 2;
-
-}
-
-.FlexMonte{
-   display:block;
-   align-items: center;
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexBuffet{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexMaillard{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-
-.FlexHistorical{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexCowlick{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexPrague{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexLincoln{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexPictureWindow{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexUnderpainting{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
-}
-.FlexSatellite{
-   display:block;
-   align-items: center;   
-   justify-content: center;
-   padding-left:20px;
-   padding-right:50px;
-   font-size: medium;
-   font-family: BIZGothic;
 }
