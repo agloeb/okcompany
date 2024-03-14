@@ -49,6 +49,11 @@ header {
    overflow-x:hidden;
    margin-top: 20px;
    margin-left:20px;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+.contents::-webkit-scrollbar { 
+   display: none;
 }
 
 .box {
