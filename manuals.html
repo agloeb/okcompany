@@ -5,40 +5,70 @@
 <script>
     function toggleText1() {
     var text = document.getElementById("textField1");
+    var other = document.getElementsByClassName("sans1");
+    for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
     if (text.style.display === "none") {
         text.style.display = "block";
+        other.style.display = "none";
     } else {
         text.style.display = "none";
     }
     }
     function toggleText2() {
     var text = document.getElementById("textField2");
+    var other = document.getElementsByClassName("sans2");
+    for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
     if (text.style.display === "none") {
         text.style.display = "block";
+        other.style.display = "none";
     } else {
         text.style.display = "none";
     }
     }
     function toggleText3() {
     var text = document.getElementById("textField3");
+    var other = document.getElementsByClassName("sans3");
+    for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
     if (text.style.display === "none") {
         text.style.display = "block";
+        other.style.display = "none";
     } else {
         text.style.display = "none";
     }
     }
     function toggleText4() {
     var text = document.getElementById("textField4");
+    var other = document.getElementsByClassName("sans4");
+    for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
     if (text.style.display === "none") {
         text.style.display = "block";
+        other.style.display = "none";
     } else {
         text.style.display = "none";
     }
     }
     function toggleText5() {
   var text = document.getElementById("textField5");
+  var other = document.getElementsByClassName("sans5");
+  for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
   if (text.style.display === "none") {
     text.style.display = "block";
+    other.style.display = "none";
   } else {
     text.style.display = "none";
   }
@@ -128,6 +158,48 @@
             text.style.display = "none";
         }
     }
+    function toggleFlex7() {
+        var text = document.getElementById("FlexLoop1");
+        var other = document.getElementsByClassName("sansLoop1");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex8() {
+        var text = document.getElementById("FlexLoop2");
+        var other = document.getElementsByClassName("sansLoop2");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
+    function toggleFlex9() {
+        var text = document.getElementById("FlexLoop3");
+        var other = document.getElementsByClassName("sansLoop3");
+        for (i = 0; i < other.length; i++) {
+            other[i].style.display='none';
+            other[i].style.top='100%';
+        }
+        if (text.style.display === "none") {
+            text.style.display = "block";
+            other.style.display = "none";
+        } else {
+            text.style.display = "none";
+        }
+    }
 </script>       
     </head>
     <div class="contents">
@@ -142,7 +214,7 @@
         </header>
         <br><br>
         <button onclick="toggleText1()">elevator</button>
-            <div id="textField1" style="display: none;">
+            <div id="textField1" class="sans2 sans3 sans4 sans5" style="display: none;">
                 <button onclick="toggleFlex1()">.......headhouse</button>
                 <br>
                 <button onclick="toggleFlex2()">.......cornflake</button>
@@ -151,7 +223,7 @@
             </div> 
             <br><br>
         <button onclick="toggleText3()">dowsing</button>
-            <div id="textField3" style="display: none;">
+            <div id="textField3" class="sans1 sans2 sans4 sans5" style="display: none;">
                 <button onclick="toggleFlex4()">.......making your final selection</button>
                 <br>
                 <button onclick="toggleFlex5()">.......making your next selection</button>
@@ -160,42 +232,52 @@
             </div>
             <br><br>
         <button onclick="toggleText4()">loop</button>
-            <div id="textField4" style="display: none;">
-                <button onclick="toggleFlex5">.......panelling on plaster</button><br>
-                <button onclick="toggleFlex6">.......panelling on plaster</button><br>
-                <button onclick="toggleFlex7">.......panelling on plaster</button>
+            <div id="textField4"class="sans2 sans1 sans3 sans5" style="display: none;">
+                <button onclick="toggleFlex7()">.......panelling on plaster</button><br>
+                <button onclick="toggleFlex8()">.......panelling on plaster</button><br>
+                <button onclick="toggleFlex9()">.......panelling on plaster</button>
             </div>
             <br><br>
         <button onclick="toggleText5()">table of contents</button>
-            <div id="textField5" style="display: none;">
+            <div id="textField5" class="sans2 sans3 sans1 sans4" style="display: none;">
                 <button id="tab">.......Chapter 3</button>
             </div>
             <br><br>
         <button onclick="toggleText6()">innards and ethernice</button>
             <br><br>
         <button onclick="toggleText2()">COE</button>
-            <div id="textField2" style="display: none;">
+            <div id="textField2" class="sans1 sans3 sans4 sans5" style="display: none;">
                 <button id="tab">.......Transtar</button>
             </div>
     </div class="contents">
     <div class="box">
-        <div class="sansTarp sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexHeadhouse" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansTarp sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexHeadhouse" style="display: none;">
             <img src="img/headhouse.png">
         </div>
-        <div class="sansHead sansTarp sansAsk sansAsk2 sansAsk3" id="FlexCornflake" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansHead sansTarp sansAsk sansAsk2 sansAsk3" id="FlexCornflake" style="display: none;">
             <img src="img/cornflake.png">
         </div>
-        <div class="sansHead sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexTarp" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansHead sansCornflake sansAsk sansAsk2 sansAsk3" id="FlexTarp" style="display: none;">
             <img src="img/tarps2.png" width="386px" height="328px">
         </div>
-        <div class="sansHead sansCornflake sansTarp sansAsk2 sansAsk3" id="FlexAsk" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansHead sansCornflake sansTarp sansAsk2 sansAsk3" id="FlexAsk" style="display: none;">
             <img src="img/askforwhat.png">
         </div>
-        <div class="sansHead sansCornflake sansTarp sansAsk sansAsk3" id="FlexAsk2" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansHead sansCornflake sansTarp sansAsk sansAsk3" id="FlexAsk2" style="display: none;">
             <img src="img/askforwhat2.png">
         </div>
-        <div class="sansHead sansCornflake sansTarp sansAsk sansAsk2" id="FlexAsk3" style="display: none;">
+        <div class="sansLoop1 sansLoop2 sansLoop3 sansHead sansCornflake sansTarp sansAsk sansAsk2" id="FlexAsk3" style="display: none;">
             <img src="img/queenie.png">
+        </div>
+        <div class="gifParent">
+            <div class="sansAsk3 sansHead sansCornflake sansTarp sansAsk sansAsk2" id="FlexLoop1" style="display: none;">
+                <img class="gif1" src="img/scratchy.gif" width="400">
+                <img class="gif2" src="img/scratchy.gif" width="300">    
+            </div>
+            <div class="sansAsk3 sansHead sansCornflake sansTarp sansAsk sansAsk2" id="FlexLoop2" style="display: none;">
+                <img class="gif3" src="img/scratchy.gif" width="450">
+                <img class="gif4" src="img/scratchy.gif" width="200">    
+            </div>
         </div>
     </div>
     <main>
