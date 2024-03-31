@@ -1,0 +1,25 @@
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+  }
+
+main{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: BIZGothic;
+    padding-top: 100px;
+}
+
+.imgwrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
