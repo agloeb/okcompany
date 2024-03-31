@@ -49,15 +49,15 @@ header {
    overflow-x:hidden;
    margin-top: 20px;
    margin-left:20px;
-   -ms-overflow-style: none;
-   scrollbar-width: none;
+   -ms-overflow-style: none;  /* Internet Explorer 10+ */
+   scrollbar-width: none !important;  /* Firefox */
 }
+
 .contents::-webkit-scrollbar { 
-   display: none;
+   display: none;  /* Safari and Chrome */
 }
 
 .box {
-   display:flex;
    align-items: center;
    justify-content: center;
    padding-top: 100px;   
@@ -65,4 +65,60 @@ header {
    flex-direction: column;
    width: 50%;
    line-height: 2;
+   z-index: 0;
+}
+
+
+.gifs{
+   opacity: .45;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 5s;
+   position: absolute;
+   ;z-index: 10;
+   overflow:hidden;
+   align-items: center;
+   justify-content: center;
+   width: 1000px;
+   padding-left: 300px;
+   transform: skew(5deg);
+ }
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+   15% {
+      opacity: .25
+   }
+	100% {
+		opacity: .45;
+	}
+}
+
+#FlexOpto{
+   animation-name: fadeOutOpacity;
+   animation-duration: 15s;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-out;
+   opacity: 0;
+}
+
+@keyframes fadeOutOpacity {
+   0% {
+      opacity: 1;
+   }
+   75% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
+}
+
+.hawaii{
+   transform: skew(4deg);
+   background-color: none !important;
+   cursor: default;
 }
