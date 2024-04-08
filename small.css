@@ -2,11 +2,13 @@
    font-family: BIZGothic;
    src: url(fonts/BIZUDGothic-Regular.ttf);
  }
-
 main{
    font-family: BIZGothic;
 }
-
+body{
+   margin-top:20px;
+   margin-left:20px;
+ }
 header {
    font-size:large;
    font-family:'BIZGothic';
@@ -14,8 +16,7 @@ header {
    top: 0;
    background-color: white;
 }
-
- button {
+button {
    background: none!important;
    border: none;
    padding: 0!important;
@@ -28,17 +29,13 @@ header {
    font-size:medium;
    text-wrap:wrap;
  }
-
- button:hover{
+button:hover{
    background-color: red !important;
    transition: all .3s ease-in-out !important;
  }
-
- body{
-   margin-top:20px;
-   margin-left:20px;
- }
-
+.title:hover{
+   background-color: white !important;
+}
 .contents{
    height:100%;
    width:300px;
@@ -52,11 +49,9 @@ header {
    -ms-overflow-style: none;  /* Internet Explorer 10+ */
    scrollbar-width: none !important;  /* Firefox */
 }
-
 .contents::-webkit-scrollbar { 
    display: none;  /* Safari and Chrome */
 }
-
 .box {
    align-items: center;
    justify-content: center;
@@ -67,10 +62,8 @@ header {
    line-height: 2;
    z-index: 0;
 }
-
-
 .gifs{
-   opacity: .45;
+   opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
@@ -81,7 +74,6 @@ header {
    align-items: center;
    justify-content: center;
    width: 1000px;
-   padding-left: 300px;
    transform: skew(5deg);
  }
 
@@ -96,15 +88,13 @@ header {
 		opacity: .45;
 	}
 }
-
-#FlexOpto{
+#opto{
    animation-name: fadeOutOpacity;
    animation-duration: 15s;
    animation-iteration-count: 1;
    animation-timing-function: ease-out;
    opacity: 0;
 }
-
 @keyframes fadeOutOpacity {
    0% {
       opacity: 1;
@@ -115,10 +105,4 @@ header {
    100% {
       opacity: 0;
    }
-}
-
-.hawaii{
-   transform: skew(4deg);
-   background-color: none !important;
-   cursor: default;
 }
