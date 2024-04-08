@@ -1,48 +1,13 @@
-<!--To add text:
-1. Copy/paste toggleFlexN function. Add 1 to N and change element id to "FlexTITLEofSMALL" and ClassName ('SansTITLE')
-2. Copy/paste title button and change toggleFlex number
-3. Copy/paste text div and update div id to "FlexTITLEofSMALL"
-4. Add class="SansTITLE" to every other text block-->
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>O.K. small parts</title>
-<script>
-function toggleText(textId) {
-  var textBlocks = document.querySelectorAll('.text-block');
-  textBlocks.forEach(function(block) {
-    if (block.id === textId) {
-      if (block.style.display === 'none' || block.style.display === '') {
-        block.style.display = 'block';
-      } else {
-        var currentOpacity = parseFloat(block.style.opacity);
-        if (currentOpacity >= 0.25) {
-          block.style.opacity = (currentOpacity - 0.25).toFixed(2);
-        } else {
-          block.style.display = 'none'; // Hide text block when opacity becomes 0
-        }
-      }
-    } else {
-      block.style.display = 'none';
-    }
-  });
-}
-function toggleFlexGIF(){
-        var gif = document.getElementById("bunkersHover");
-        if (gif.style.display === "none") {
-            gif.style.display = "block";
-        } else {
-            gif.style.display = "none";
-        }
-    }
-</script>  
     <main>     
     </head>
     <div class="contents">
         <div class="topContainer"></div>
         <header class="header" id="myHeader">
-            <a href="house.html">
+            <a href="index.html">
                 <img src="img/quality ring/qualityOK_notagline.png" width="100" height="100"
                 onmouseover="this.src='img/quality ring/REDqualityOKwink_notagline.png';"
                 onmouseout="this.src='img/quality ring/qualityOK_notagline.png';">
@@ -51,8 +16,8 @@ function toggleFlexGIF(){
             SMALL PARTS
             <br><br><br>
         </header>
-        <div class="content"><!--title buttons-->
-            <button onclick="toggleText('monte')" onclick="changeOpacity('monte')">monte carlo</button>
+        <div> <!--title buttons-->
+            <button onclick="toggleText('monte')">monte carlo</button>
                 <br><br>
             <button onclick="toggleText('buffet')">buffet</button>
                 <br><br>
@@ -92,7 +57,7 @@ function toggleFlexGIF(){
                 <br><br> 
                 <br><br>
                 <br><br>
-            <button class="title" onclick="toggleImg1()">ALL THE PACKRATS MY BROTHER BURIED</button> 
+            <button class="title" onclick="toggleText('packrat')">ALL THE PACKRATS MY BROTHER BURIED</button> 
                 <br><br>
             <button onclick="toggleText('cereal')">grandma cereal</button>
             <br><br>
@@ -172,7 +137,7 @@ function toggleFlexGIF(){
             <p>Bulls are curled up together knocked fifty gallons of water over. Ysidro said Bulls knocked it into mud now he’s in the chute trying to get someone else like an angel to do his work, burn his piles, eat his supper. Bulls like that wold comfort a baby on a train then wreck your terracotta floor after you invite them back. </p>
         </div>
         <div class="text-block" id="opto" style="display: none;">          
-            <div onmouseover="toggleFlexGIF()" onmouseleave="toggleFlexGIF()">I get a Hawaiian sunrise every morning I wake up in the dirt and tar and under the turbines. I can even get a Kauai island optogram if the cards lay down right next to me, pushed against the ground by the wind, which they have been. We got snow for Halloween. Backpack’s breaking up the most of it like a C-Band satellite interfering. These issues taking ages for now.  </div>
+            <div onmouseover="toggleImage('bunkers')" onmouseleave="toggleImage('bunkers')">I get a Hawaiian sunrise every morning I wake up in the dirt and tar and under the turbines. I can even get a Kauai island optogram if the cards lay down right next to me, pushed against the ground by the wind, which they have been. We got snow for Halloween. Backpack’s breaking up the most of it like a C-Band satellite interfering. These issues taking ages for now.  </div>
         </div>
         <div class="text-block" id="motorbike" style="display: none;">
             <p>I can jump my motorbike onto a moving train<br>
@@ -215,12 +180,82 @@ function toggleFlexGIF(){
                 Every shovel has its place on the wall and why shouldn’t every stuffed bird have its place. There’s different kinds of shovels for digging, hauling, launching, and there’s rocks and soil and brush and heels. When it takes the blow from your boot it can’t help but radiate through you. There’s something under this whole place we don’t know about. That’s why Vearl was out here with his dowsing rod even after the well was dropped. Pull it up the surface sure but the hole is never going to be big enough. The closest someone like you can get is the cellar dirt, slobbering back to the picture over a handful of canned peaches.   
             </p>
         </div>
-    <div class="gifcontainer">
-        <div class="gifs">
-            <img src="img/bunkersHover3.gif" width="1000px" style="display: none" id="bunkersHover">
-        </div>
+    <div class="img-container">
+        <img src="img/bunkersHover3.gif" width="1000px" style="display: none" class="text-block" id="bunkers">
+        <img src="img/packrat.png" width="300px" style="display: none" class="text-block" id="packrat">    
     </div>
-    </main>
+    </main> 
+
+<script>
+function toggleText(textId) {
+  var textBlocks = document.querySelectorAll('.text-block');
+  var currentBlock = document.getElementById(textId);
+
+  textBlocks.forEach(function(block) {
+    if (block === currentBlock) {
+      if (block.style.display === 'none' || block.style.display === '') {
+        fadeInTextBlock(block);
+        block.style.display = 'block';
+        block.style.zIndex = 1;
+        generateNoise(block, 20); // Adjust noise density as needed
+      }
+    } else {
+      fadeOutTextBlock(block);
+    }
+  });
+}
+
+function fadeOutTextBlock(block) {
+  var currentOpacity = parseFloat(block.style.opacity);
+  if (currentOpacity > 0) {
+    block.style.opacity = (currentOpacity - 0.02).toFixed(2);
+    setTimeout(function() {
+      fadeOutTextBlock(block);
+    }, 100); // Adjust the interval here for smoother fading
+  } else {
+    block.style.display = 'none';
+    resetNoise(block);
+  }
+}
+
+function fadeInTextBlock(block) {
+  block.style.opacity = 1;
+}
+
+function generateNoise(container, count) {
+  const fragment = document.createDocumentFragment();
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+
+  for (let i = 0; i < count; i++) {
+    const noiseElement = document.createElement('div');
+    noiseElement.className = 'noise';
+    noiseElement.style.left = Math.floor(Math.random() * containerWidth) + 'px';
+    noiseElement.style.top = Math.floor(Math.random() * containerHeight) + 'px';
+    noiseElement.style.opacity = '1';
+    fragment.appendChild(noiseElement);
+  }
+
+  container.appendChild(fragment);
+}
+
+function resetNoise(block) {
+  // Remove existing noise elements
+  var noiseElements = block.querySelectorAll('.noise');
+  noiseElements.forEach(function(element) {
+    element.remove();
+  });
+}
+
+
+function toggleImage(imageId) {
+    var image = document.getElementById(imageId);
+    if (image.style.display = 'none') {
+        image.style.display = 'block'
+    }
+    else (image.style.display = 'none')
+}
+</script> 
 <link rel="stylesheet" href="small.css">    
 <link rel="preload" as="font" href="fonts/BIZUDGothic-Regular.ttf" type="font/tff">
 <link rel="preload" as="image" href="img/quality ring/okGlobe2.gif">
