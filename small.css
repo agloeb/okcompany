@@ -7,7 +7,8 @@ main{
 }
 body{
    margin-top:20px;
-   margin-left:20px;
+   margin-left:20px; 
+   overflow: hidden;
  }
 header {
    font-size:large;
@@ -62,47 +63,31 @@ button:hover{
    line-height: 2;
    z-index: 0;
 }
-.gifs{
+.text-block{
    opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 5s;
+   position: absolute!important;
+   width: 50%;
+   transform-origin: center;
+}
+.img-container{
+   padding-left: 100px;
+   height: 30vh;
+   max-height: 30vh;
+   width: auto;
+   max-width: 100%;
+   margin: 0 auto;
+}
+.img-container img{
+   height: 70%;
+   width: auto;
+   display: block;
+   margin: 0 auto;
+}
+.noise {
+   width: 2px;
+   height: 2px;
    position: absolute;
-   ;z-index: 10;
-   overflow:hidden;
-   align-items: center;
-   justify-content: center;
-   width: 1000px;
-   transform: skew(5deg);
- }
-
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-   15% {
-      opacity: .25
-   }
-	100% {
-		opacity: .45;
-	}
-}
-#opto{
-   animation-name: fadeOutOpacity;
-   animation-duration: 15s;
-   animation-iteration-count: 1;
-   animation-timing-function: ease-out;
-   opacity: 0;
-}
-@keyframes fadeOutOpacity {
-   0% {
-      opacity: 1;
-   }
-   75% {
-      opacity: 1;
-   }
-   100% {
-      opacity: 0;
-   }
+   top: calc(random() * 100%);
+   left: calc(random() * 100%);
+   background-color: black;
 }
