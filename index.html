@@ -4,81 +4,147 @@
         <title>O.K. company</title>
 <script>
     setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
+
+    function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+    var images = ["img/homepage/HOMEPAGEtopleftwindow.png", "img/homepage/HOMEPAGEbottomrightdoor.png", "img/homepage/HOMEPAGEcloud1.png", "img/homepage/HOMEPAGEfrontdoor.png",  "img/homepage/HOMEPAGEtoprightwindow.png",  "img/homepage/HOMEPAGEtelephone.png"];
+    var currentIndex = 0;
+    var intervalTime = 100;
+    var flickerDuration = 600;
+    var flickerInterval;
+    var animationDuration = 5; 
+    var shuffledImages = shuffleArray(images);
+
+    function changeImage() {
+        var imgElement = document.getElementById("houseImg");
+        imgElement.src = images[currentIndex];
+        currentIndex = (currentIndex + 1) % shuffledImages.length;
+
+        if (currentIndex === 0) {
+            clearInterval(flickerInterval);
+        }
+    }
+
+    flickerInterval = setInterval(changeImage, intervalTime);
+
     function mouseover(x){
         switch (x) {
             case 'frontdoor':
                 {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEfrontdoor.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEfrontdoor.png"
                 };
                 break;
             case 'sidedoor':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEbottomrightdoor.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEbottomrightdoor.png"
                 };
                 break;
             case 'toprightwindow':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEtoprightwindow.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEtoprightwindow.png"
                 };
                 break;
             case 'cloud1':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEcloud1.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEcloud1.png"
                 };
                 break;
             case 'topleftwindow':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEtopleftwindow.png"//NEED NEW IMAGE HERE!!!
-                };
-                break;
-            case 'toprightwindow':
-            {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEtoprightwindow.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEtopleftwindow.png"
                 };
                 break;
             case 'tele':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEtelephone.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEtelephone.png"
                 };
                 break;
             case 'hardware':
             {
-                    document.getElementById("imageId").src="img/homepage/HOMEPAGEhardware2.png"
+                    document.getElementById("houseImg").src="img/homepage/HOMEPAGEhardware2.png"
                 };
                 break;
         }
     }
     function mouseleave() {
-  document.getElementById("imageId").src="img/homepage/HOMEPAGE.png";
+  document.getElementById("houseImg").src="img/homepage/HOMEPAGE.png";
 }
-
 </script>
     </head>
-    <main>
-            <div class="imgwrap"> 
-                <img id="imageId" src="img/homepage/HOMEPAGE.png" width=500 height=642 usemap="#image-map">
-                <map name="image-map">
-                    <area onmouseover="mouseover('frontdoor')" onmouseleave="mouseleave()" target="_parent" alt="manuals" title="manuals" href="manuals.html" coords="107,485,149,449" shape="rect">
-                    <area onmouseover="mouseover('sidedoor')" onmouseleave="mouseleave()" target="_parent" alt="bunkers" title="bunkers" href="bunkers.html" coords="206,487 225,451" shape="rect">
-                    <area onmouseover="mouseover('cloud1')" onmouseleave="mouseleave()" target="_parent" alt="theater" title="theater" href="theater.html" coords="256,404,277,392,289,389,296,383,310,386,323,396,312,403,298,405,291,399,280,407,266,409" shape="poly">
-                    <area onmouseover="mouseover('topleftwindow')" onmouseleave="mouseleave()" target="_parent" alt="small parts" title="smalls" href="smalls.html" coords="100,425,118,401" shape="rect">
-                    <area onmouseover="mouseover('toprightwindow')" onmouseleave="mouseleave() "target="_parent" alt="books" title="books" href="books.html" coords="207,423,225,401" shape="rect">
-                    <area onmouseover="mouseover('tele')" onmouseleave="mouseleave()" target="_parent" alt="telephone" title="telephone" href="telephone.html" coords="381,489,441,449" shape="rect">
-                    <area class="areaNoClick" onmouseover="mouseover('hardware')" onmouseleave="mouseleave()" target="" alt="" title="" href="resident.html" coords="14,516,496,567" shape="rect">
-                </map>
-            </div>
-    </main>
-    <link rel="stylesheet" href="house.css">
-        <link rel="preload" as="image" href="img/homepage/HOMEPAGE.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEbottomrightdoor.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEcloud1.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEfrontdoor.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEbottomrightdoor.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEhardware2.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEmanuals.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEsmallparts.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEtelephone.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEtheater.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEtopleftwindow.png">
-    <link rel="preload" href="img/homepage/HOMEPAGEtoprightwindow.png">
+    <body>
+        <div class="houseContainer" id="house"> 
+            <img id="houseImg" src="img/homepage/HOMEPAGE.png" width=500 height=642 usemap="#image-map">
+            <map name="image-map">
+                <area onmouseover="mouseover('frontdoor')" onmouseleave="mouseleave()" target="_parent" alt="manuals" title="manuals" href="manuals.html" coords="107,485,149,449" shape="rect">
+                <area onmouseover="mouseover('sidedoor')" onmouseleave="mouseleave()" target="_parent" alt="bunkers" title="bunkers" href="bunkers.html" coords="206,487 225,451" shape="rect">
+                <area onmouseover="mouseover('cloud1')" onmouseleave="mouseleave()" target="_parent" alt="theater" title="theater" href="theater.html" coords="256,404,277,392,289,389,296,383,310,386,323,396,312,403,298,405,291,399,280,407,266,409" shape="poly">
+                <area onmouseover="mouseover('topleftwindow')" onmouseleave="mouseleave()" target="_parent" alt="smalls" title="smalls" href="smalls.html" coords="100,425,118,401" shape="rect">
+                <area onmouseover="mouseover('toprightwindow')" onmouseleave="mouseleave() "target="_parent" alt="books" title="books" href="books.html" coords="207,423,225,401" shape="rect">
+                <area onmouseover="mouseover('tele')" onmouseleave="mouseleave()" target="_parent" alt="telephone" title="telephone" href="telephone.html" coords="381,489,441,449" shape="rect">
+                <area onmouseover="mouseover('hardware')" onmouseleave="mouseleave()" onclick="toggleGlobe()" style="cursor:pointer" coords="14,516,496,567" shape="rect">
+            </map>
+        </div>
+        <div class="container" id="globe" style="display: none;">
+            <img src="img/quality ring/okGlobe2.gif" onclick="toggleGlobeOff()" id="emailImage" width="250px" height="auto" style="cursor:pointer">
+            <p id="emailAddress" style="display: none;">addison@okcompany.org</p>
+        </div>
+        <div class="container">
+            <p id="copied" style="display: none;">email address copied</p>
+        </div>
+    <script>
+        function toggleGlobe(){
+            var globe = document.getElementById('globe');
+            var house = document.getElementById('house');
+            if (globe.style.display === 'none'){
+                globe.style.display = 'block';
+                globe.style.animation = 'fadeIn forwards 0.5s'
+                house.style.animation = 'fadeOut forwards 0.5s';            } else {
+                globe.style.display = 'none';
+                globe.style.animation = 'fadeOutGlobe forwards 0.5s';
+                house.style.opacity = '1';
+            } 
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailImage = document.getElementById('emailImage');
+            emailImage.addEventListener('click', () => {
+                const emailAddress = document.getElementById('emailAddress').innerText;
+                
+                const textarea = document.createElement('textarea');
+                textarea.value = emailAddress;
+                document.body.appendChild(textarea);
+                
+                textarea.select();
+                document.execCommand('copy');
+                
+                document.body.removeChild(textarea);
+
+                const copied = document.getElementById('copied').innerText;
+                const temptext = document.createElement('temptext');
+                temptext.value = copied;
+                document.body.appendChild(temptext);
+            });
+        });
+        function toggleGlobeOff(){
+            var globe = document.getElementById('globe');
+            var house = document.getElementById('house');
+            var copied = document.getElementById('copied');
+            if (globe.style.display === 'block'){
+                globe.style.animation = 'fadeOutGlobe forwards 0.5s';
+                globe.style.display = 'none';
+                house.style.animation = 'fadeInHouse forwards 3s';
+                copied.style.display = 'block';
+                copied.style.animation = 'fadeInOut forwards 2s';
+            }
+        }
+    </script>
+    </body>
+<link rel="stylesheet" href="house.css">
+<link rel="preload" as="image" href="img/homepage/HOMEPAGE.png">
+<link rel="preload" href="img/homepage/HOMEPAGEhardware2.png">
 </html>
