@@ -77,7 +77,6 @@ html {
    margin: 0 auto;
    display: block;
    animation-name: fadeInOut;
-   animation-iteration-count: infinite;
 }
 @keyframes fadeInOut{
    0% {
