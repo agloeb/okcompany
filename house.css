@@ -1,15 +1,95 @@
-.imgwrap img {
-   position:absolute;
-   align-items: center;
-   justify-content: center;
-   padding-top:20px;
-   overflow:hidden!important;
-   margin:auto;
-   left:0;
-   right:0;
+html {
+   overflow: hidden;
+}
+@font-face {
+   font-family: BIZGothic;
+   src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+.houseContainer{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 100%;
+   text-align: center;
+}
+#houseImg{
    display: block;
-  }
-
-.areaNoClick{
-   cursor:default;
+   opacity: 1!important;
+   margin: 0 auto;
+   animation-name: 'fadeOut';
+   animation-duration: 0.5s;
+   animation-play-state: paused;
+   animation: 'fadeInHouse' 0.5s paused;
+}
+@keyframes fadeOut{
+   from {
+      opacity: 1;
+   }
+   to {
+      opacity: .25;
+   }
+}
+@keyframes fadeInHouse{
+   0% {
+      opacity: .25;
+   }
+   50%{
+      opacity: .25;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+.container{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 100%;
+   text-align: center;
+}
+#emailImage{
+   display: block;
+   margin: 0 auto;
+   animation-name: 'fadeIn';
+   animation-duration: 0.5s;
+   animation: 'fadeOutGlobe' 0.5s paused;
+}
+@keyframes fadeIn{
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+@keyframes fadeOutGlobe{
+   from {
+      opacity: 1;
+   }
+   to {
+      opacity: 0;
+   }
+}
+#copied {
+   font-family: BIZGothic;
+   font-size: x-large;
+   color: red;
+   margin: 0 auto;
+   display: block;
+   animation-name: fadeInOut;
+   animation-iteration-count: infinite;
+}
+@keyframes fadeInOut{
+   0% {
+      opacity: 0;
+   }
+   45% {
+      opacity: 1;
+   }
+   75% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+   }
 }
