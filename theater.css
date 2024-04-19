@@ -1,153 +1,93 @@
-/*body*/
 @font-face {
   font-family: 'BIZGothic';
   src: url(fonts/BIZUDGothic-Regular.ttf);
 }
+html{
+  font-family: 'BIZGothic';
+  overflow: hidden;
+  background-color: black;
+  animation: 'white2black' 
+}
+/*silo*/
+.container{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.silo{
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  height: auto;
+}
+/*gifs*/
+body{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+.masterContainer{
+  max-width: 600px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px); /* Adjust height as needed */
+  gap: 10px; /* Adjust spacing between GIFs */
+  
+}
+.gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.label {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 5px;
+  margin-right: 25px;
+  margin-left: 25px;
+  color: white;
+  text-decoration: none!important;
+}
+.label:hover{
+  text-decoration: underline;
+  color: red;
+}
+.label-left {
+  order: -1; /* Move label to the left */
+}
 
-.box {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   position:absolute;
-   width:95%;
-   overflow: hidden !important;;
-   font-family: 'BIZGothic';
-
- }
- .imgwrap img {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    max-width: auto; 
-    max-height: 90vh; 
-    overflow: hidden !important;;
- }
-
- /*screens*/
- .flex-container {
-   display: flex;
-   flex-direction: column;
-   flex-wrap: nowrap;
-   justify-content: center;
-   align-items: center;
-   align-content: stretch;
-   position: relative;
-   font-family: 'BIZGothic';
- }
- 
- .flex-items:nth-child(1) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(2) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(3) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(4) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(5) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(6) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(7) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(8) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(9) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(10) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(11) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(12) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
- 
- .flex-items:nth-child(13) {
-   display: block;
-   flex-grow: 0;
-   flex-shrink: 1;
-   flex-basis: auto;
-   align-self: auto;
-   order: 0;
- }
+.label-right {
+  order: 1; /* Move label to the right */
+}
+button {
+  position: absolute;
+  font-family: BIZGothic;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 500;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  z-index: 1;
+}
