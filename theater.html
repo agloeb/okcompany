@@ -3,23 +3,75 @@
     <head>
         <title>O.K. theater</title>
     </head>
-    <main>
-        <div class="box">
-            <div class="imgwrap">
-                <img src="img/ratprooffireproof.png">
+    <body>
+        <div class="container" id="container">
+            <img class="silo" id="gif" src="img/theater/theaterZoom.gif">
+        </div>
+
+        <div class="masterContainer">
+            <div class="item">
+              <a class="label label-left" href="placeholder">A</a>
+              <img class="gif" src="img/theater/canHouse.gif" alt="GIF A">
             </div>
-        </div>
-        <div class="flex-container">
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-            <div class="flex-items">move</div>
-        </div>
-    </main>
+            <div class="item">
+              <a class="label label-right" href="placeholder">B</a>
+              <img class="gif" src="img/theater/gokart.gif" alt="GIF B">
+            </div>
+            <div class="item">
+              <a class="label label-left" href="placeholder">C</a>
+              <img class="gif" src="img/theater/ratTurn.gif" alt="GIF C">
+            </div>
+            <div class="item">
+              <a class="label label-right" href="placeholder">D</a>
+              <img class="gif" src="img/theater/ratTurn2.gif" alt="GIF D">
+            </div>
+            <div class="item">
+              <button onclick="refreshGIFs('next')">
+                <img src="img/quality ring/arrow.png" width="50">
+              </button>
+            </div>
+          </div>
+        <script>
+            var gif = document.getElementById('gif')
+            var body = document.querySelector('masterContainer');
+
+            window.addEventListener('load', function() {
+                gif.src = gif.src;
+                body.style.display = 'none';
+            });
+            
+            function removeGif() {
+            gif.style.display = 'none'; 
+            body.style.display = 'block';
+            }
+
+            var duration = 5300;
+            setTimeout(removeGif, duration);
+
+            const gifURLs = [
+            "t.gif",
+            "placeholder2.gif",
+            "placeholder3.gif",
+            "placeholder4.gif"
+        ];
+
+        // Function to refresh GIFs
+        function refreshGIFs(direction) {
+            const gifs = document.querySelectorAll('.gif');
+            let startIndex = 0;
+            
+            if (direction === 'next') {
+            startIndex = Math.floor(Math.random() * (gifURLs.length - 3));
+            } else if (direction === 'prev') {
+            startIndex = Math.max(0, Math.floor(Math.random() * (gifURLs.length - 3)));
+            }
+
+            gifs.forEach((gif, index) => {
+            gif.src = gifURLs[startIndex + index];
+            });
+        }
+        </script>
+    </body>
     <link rel="stylesheet" href="theater.css">
+    <link rel="preload" as="image" href="img/theaterZoom.gif">
 </html>
