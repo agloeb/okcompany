@@ -6,11 +6,12 @@ html {
    src: url(fonts/BIZUDGothic-Regular.ttf);
 }
 .houseContainer{
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
+   position: relative;
    width: 100%;
-   text-align: center;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 #houseImg{
    display: block;
@@ -21,6 +22,8 @@ html {
    animation-play-state: paused;
    animation: 'fadeInHouse' 0.5s paused;
 }
+
+
 @keyframes fadeOut{
    from {
       opacity: 1;
@@ -91,4 +94,27 @@ html {
    100% {
       opacity: 0;
    }
+}
+
+@media only screen and (max-width: 600px) {
+   .houseContainer{
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   #houseImg{
+      display: block;
+      width: 90vw;
+      height: auto;
+      opacity: 1!important;
+      margin: 0 auto;
+      animation-name: 'fadeOut';
+      animation-duration: 0.5s;
+      animation-play-state: paused;
+      animation: 'fadeInHouse' 0.5s paused;
+   }
+   
 }
