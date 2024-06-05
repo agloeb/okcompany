@@ -1,0 +1,65 @@
+@font-face {
+   font-family: BIZGothic;
+   src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+
+body{
+   font-family: BIZGothic;
+   margin: 0;
+}
+
+.control-panel {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+}
+
+.base-image, .buttons {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+.buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-image1 {
+    position: absolute;
+    height: auto;
+    width: 15vw;
+    left: 25vw;
+    top: 5vh;
+    display: block;
+}
+
+.button-image2 {
+    position: absolute;
+    height: auto;
+    width: 15vw;
+    left: 40vw;
+    top: 5vh;
+    display: block;
+}
+
+.button-image3 {
+    position: absolute;
+    height: auto;
+    width: 15vw;
+    left: 55vw;
+    top: 5vh;
+    display: block;
+}
+
+.button-image4 {
+    position: absolute;
+    height: auto;
+    width: 15vw;
+    left: 70vw;
+    top: 5vh;
+    display: block;
+}

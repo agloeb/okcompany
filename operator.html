@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>O.K. operation</title>
+    </head>
+        <body>
+            <div class="control-panel">
+                <img src="img/OPERATORbkg.png" width="1500" class="base-image" id="base-image" usemap="#image-map">
+                    <map name="image-map">
+                        <area onmouseover="mouseover('ok')" onmouseleave="mouseleave()" target="" alt="ok" title="ok" href="index.html" coords="83,73,47" shape="circle">
+                    </map>
+                <div class="buttons">
+                    <img src="img/OPERATORsynchroOFF.png" class="button-image1 toggle-image" id="synchro" data-alt-src="img/OPERATORsynchroON.png">
+                    <img src="img/OPERATORheadhouseOFF.png" class="button-image2 toggle-image" id="headhouse" data-alt-src="img/OPERATORheadhouseON.png">
+                    <img src="img/OPERATORratOFF.png" class="button-image3 toggle-image" id="rat" data-alt-src="img/OPERATORratON.png">
+                    <img src="img/_DOOR.png" class="button-image4 toggle-image" id="kauai_door" data-alt-src="img/_KAUAI.png">
+                </div>
+            </div>
+        </body>
+    <script>
+        function mouseover(x){
+            switch (x) {
+                case 'ok':
+                    {
+                    document.getElementById("base-image").src="img/OPERATORbkgOK.png"
+                    };
+                }}
+        function mouseleave() {
+            document.getElementById("base-image").src="img/OPERATORbkg.png";
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.toggle-image');
+
+            images.forEach(image => {
+                // Set the original source attribute initially if not already set
+                if (!image.hasAttribute('data-original-src')) {
+                    image.setAttribute('data-original-src', image.src);
+                }
+
+                image.addEventListener('click', function() {
+                    // Get the current and alternate image sources
+                    const currentSrc = image.src;
+                    const originalSrc = image.getAttribute('data-original-src');
+                    const altSrc = image.getAttribute('data-alt-src');
+
+                    console.log(`Click on ${image.id}: currentSrc=${currentSrc}, originalSrc=${originalSrc}, altSrc=${altSrc}`);
+
+                    // Toggle the image source
+                    if (currentSrc.endsWith(altSrc)) {
+                        image.src = originalSrc;
+                    } else {
+                        image.src = altSrc;
+                    }
+
+                    console.log(`After click: newSrc=${image.src}`);
+                });
+            });
+        });
+    </script>
+<link rel="stylesheet" href="operator.css">
+<link rel="preload" type="image" href="img/OPERATORbkg.png">
+</html> 
