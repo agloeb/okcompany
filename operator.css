@@ -63,3 +63,60 @@ body{
     top: 5vh;
     display: block;
 }
+
+@media only screen and (max-width: 600px) {
+    .control-panel {
+        position: relative;
+        overflow: hidden;
+     }
+     
+     .base-image {
+        height: 50vh;
+        width: auto;
+        display: block;
+     }
+     
+     .buttons {
+         position: absolute;
+         top: 15vh;
+         left: 0;
+         width: 25vw;
+         cursor: pointer;
+     }
+
+    .button-image1 {
+        position: absolute;
+        height: auto;
+        width: 20vw;
+        left: 5vw;
+        top: 2vh;
+        display: block;
+    }
+
+    .button-image2 {
+        position: absolute;
+        height: auto;
+        width: 20vw;
+        left: 25vw;
+        top: 2vh;
+        display: block;
+    }
+
+    .button-image3 {
+        position: absolute;
+        height: auto;
+        width: 20vw;
+        left: 45vw;
+        top: 2vh;
+        display: block;
+    }
+
+    .button-image4 {
+        position: absolute;
+        height: auto;
+        width: 20vw;
+        left: 70vw;
+        top: 2vh;
+        display: block;
+    }
+}
