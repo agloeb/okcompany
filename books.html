@@ -7,7 +7,7 @@
     <main>
         <div class="contents">
             <header>
-                <a href="index.html">
+                <a href="house.html">
                     <img src="img/quality ring/qualityOK_notagline.png" width="100" height="100"
                     onmouseover="this.src='img/quality ring/REDqualityOKwink_notagline.png';"
                     onmouseout="this.src='img/quality ring/qualityOK_notagline.png';">
@@ -62,26 +62,6 @@
         </div>
     </main>
     
-<script>
-  function toggleDescription(id) {
-        var descriptions = document.querySelectorAll('.description');
-        descriptions.forEach(function(description) {
-            description.style.display = 'none';
-        });
-
-        var description = document.getElementById(id);
-        description.style.display = 'block';
-    }
-
-    function toggleBook(id) {
-        var images = document.querySelectorAll('.books img');
-        images.forEach(function(image) {
-            image.style.display = 'none';
-        });
-
-        var image = document.getElementById(id);
-        image.style.display = 'block';
-    }
-</script>
+<script src="books.js"></script>
     <link rel="stylesheet" href="books.css">
 </html>
