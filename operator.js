@@ -1,4 +1,4 @@
- function mouseover(x){
+function mouseover(x){
             switch (x) {
                 case 'ok':
                     {
