@@ -1,18 +1,22 @@
+html{
+    overflow: hidden!important;
+}
+
 @font-face {
     font-family: BIZGothic;
     src: url(fonts/BIZUDGothic-Regular.ttf);
   }
  
- main{
+main{
     font-family: BIZGothic;
  }
  
- header {
+header {
     font-size:large;
     font-family:'BIZGothic';
  }
  
- .contents{
+.contents{
     height:100%;
     width:300px;
     position:fixed;
@@ -22,25 +26,54 @@
     overflow-x:hidden;
     margin-top: 20px;
     margin-left:20px;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
 }
+.contents::-webkit-scrollbar { 
+    display: none;  
+ }
 
-.box {
-    display:flex;
-    align-items: baseline;
-    justify-content: space-evenly;
-    padding-top:100px;
-    padding-left: 300px;
-    padding-right: 100px;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+button{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: 'BIZGothic';
+    /*input has OS specific font-family*/
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor:pointer;
+    font-size:medium;
+  }
+button:hover{
+  background-color: red !important;
+  transition: all .3s ease-in-out !important;
+  }
 
- .FlexMUD{
-    display:block;
-    flex-basis:50%;
-}
-
-.FlexOK{
-    display:block;
-    flex-basis:50%;
+.frame{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 320px);
+  height: 100vh;
+  left: 320px;
+  }
+.frameImg{
+  position: absolute;
+  height: 110vh;
+  z-index: 100;
+  }
+.books{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 320px);
+  height: 100vh;
+  left: 320px;
+  }
+.books img{
+  position: absolute;
+  height: 50vh;
 }
