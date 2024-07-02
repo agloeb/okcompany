@@ -2,63 +2,86 @@
 <html>
     <head>
         <title>O.K. books</title>
-<script>
-    function toggleText1() {
-    var text = document.getElementById("mudPond");
-    if (text.style.display === "none") {
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-    }
-    function toggleText2() {
-    var text = document.getElementById("OKnote");
-    if (text.style.display === "none") {
-        text.style.display = "block";
-    } else {
-        text.style.display = "none";
-    }
-    }
-</script>
+        <link rel="preload" type="image" href="img/books/hogsFrame.png">
     </head>
     <main>
         <div class="contents">
-        <header>
-            <a href="index.html">
-                <img src="img/quality ring/qualityOK_notagline.png" width="100" height="100"
-                onmouseover="this.src='img/quality ring/REDqualityOKwink_notagline.png';"
-                onmouseout="this.src='img/quality ring/qualityOK_notagline.png';">
-            </a>
-                <br><br>
-        </header>
-        <br><br>
-        <div id="mudPond" style="display: none;">
-            MUD POND
+            <header>
+                <a href="house.html">
+                    <img src="img/quality ring/qualityOK_notagline.png" width="100" height="100"
+                    onmouseover="this.src='img/quality ring/REDqualityOKwink_notagline.png';"
+                    onmouseout="this.src='img/quality ring/qualityOK_notagline.png';">
+                </a>
+                    <br><br>
+                    BOOKS
+            </header>
             <br><br>
-            tracing paper, <br>water color paper, <br>long stitch
-        </div>
-        <div id="OKnote" style="display: none;">
-            OK NOTES
+            <button onclick="toggleDescription('mud'); toggleBook('Bmud')">mud pond</button>
+                <p class="description" id="mud" style="display: none;">...long stitch through slotted cover,<br>...hard flipping cover,<br>...tracing paper and watercolor paper<br>...4 3/4 x 6</p>
             <br><br>
-            tracing paper, <br>water color paper, <br>long stitch
+            <button onclick="toggleDescription('OKnotes'); toggleBook('BOKnotes')">OK notes</button>
+                <p class="description" id="OKnotes" style="display: none;">...long stitch through slotted cover<br>...soft flipping cover<br>...tracing paper and water color<br>...varied page size<br>...4 3/4 x 6</p>
+            <br><br>
+            <button onclick="toggleDescription('quilt'); toggleBook('Bquilt')">quilts</button>
+                <p class="description" id="quilt" style="display: none;">...FOR THE FABRIC RELATED<br>...long stitch through slotted cover<br>...soft cover<br>...water color and drawing paper<br>...7 1/4 x 11</p>
+            <br><br>
+            <button onclick="toggleDescription('pocket1'); toggleBook('Bpocket1')">liv's pocket book</button>
+                <p class="description" id="pocket1" style="display: none;">...case bound<br>...high banks 1996 tee<br>...hard cover<br>...wyoming office paper<br>...3 3/4 x 6 1/4</p>
+            <br><br>
+            <button onclick="toggleDescription('pocket3'); toggleBook('Bpocket3')">liv's second pocket book</button>
+            <p class="description" id="pocket3" style="display: none;">...case bound<br>...hard cover<br>...santa fe craigslist paper<br>...4 1/4 x 6 1/4</p>
+            <br><br>
+            <button onclick="toggleDescription('pocket2'); toggleBook('Bpocket2')">AW's pocket book</button>
+                <p class="description" id="pocket2" style="display: none;">...case bound<br>...hard cover<br>...wyoming old stock office paper<br>...3 3/4 x 6 1/4</p>
+            <br><br>
+            <button onclick="toggleDescription('kolache'); toggleBook('Bkolache')">kolaches</button>
+                <p class="description" id="kolache" style="display: none;">...long stitch through slotted cover<br>...soft cover<br>...craigslist paper<br>...sweet doughs/overnight doughs<br>...6 1/4 x 9</p>
+            <br><br>
+            <button onclick="toggleDescription('zuma'); toggleBook('Bzuma')">zuma</button>
+                <p class="description" id="zuma" style="display: none;">...case bound<br>...retired zuma tee<br>...hard cover<br>...7 1/4 x 8 7/8</p>
+            <br><br>
+            <button onclick="toggleDescription('looper'); toggleBook('Blooper')">looper manual</button>
+                <p class="description" id="looper" style="display: none;">...machine stitch<br>...lost<br>...20 made in 2023</p>
+            <br><br>
+            <button onclick="toggleDescription('billy'); toggleBook('Bbilly')">billy boat</button>
+                <p class="description" id="billy" style="display: none;">...case bound w/ rounded spine<br>...hard cover<br>...high banks 1996 tee<br>...graph paper<br>...5 1/2 x 7 1/2</p>
+            <br><br>
+            <button onclick="toggleDescription('button'); toggleBook('Bbutton')">button demo</button>
+                <p class="description" id="button" style="display: none;">...buttonhole stitch<br>...soft cover<br>...craigslist roll paper<br>...7 x 10</p>
+            <br><br>
+            <button onclick="toggleDescription('biscuits'); toggleBook('Bbiscuits')">sal's biscuits</button>
+            <p class="description" id="biscuits" style="display: none;">...case bound<br>...hard cover<br>...7 x 10</p>
+            <br><br>
         </div>
+        <div class="frame">
+            <img class="frameImg" src="img/books/hogsFrame.png"> 
         </div>
-        <div class="box">
-            <div class="imageId FlexMUD">
-                <img src="img/books/mudpondSTILL.png" width="495" height="338"
-                onmouseover="this.src='img/books/mudpondLOSSY.gif'; toggleText1();"
-                onmouseleave="this.src='img/books/mudpondSTILL.png'; toggleText1();">
-            </div>
-            <div class="imageId FlexOK">
-                <img src="img/books/OKbookSTILL.png" width="495" height="338"
-                onmouseover="this.src='img/books/OKbookLOSSY.gif'; toggleText2()"
-                onmouseleave="this.src='img/books/OKbookSTILL.png'; toggleText2()">
-            </div>
+        <div class="books">
+            <img id="Bmud" src="img/books/mudpondLOSSY.gif" style="display: none;">
+            <img id="BOKnotes" src="img/books/OKbookLOSSY.gif" style="display: none;">
         </div>
     </main>
+    
+<script>
+  function toggleDescription(id) {
+        var descriptions = document.querySelectorAll('.description');
+        descriptions.forEach(function(description) {
+            description.style.display = 'none';
+        });
+
+        var description = document.getElementById(id);
+        description.style.display = 'block';
+    }
+
+    function toggleBook(id) {
+        var images = document.querySelectorAll('.books img');
+        images.forEach(function(image) {
+            image.style.display = 'none';
+        });
+
+        var image = document.getElementById(id);
+        image.style.display = 'block';
+    }
+</script>
     <link rel="stylesheet" href="books.css">
-    <link rel="preload" as="image" href="img/books/mudpondLOSSY.gif">
-    <link rel="preload" as="image" href="img/books/mudpondSTILL.png">
-    <link rel="preload" as="image" href="img/books/OKbookLOSSY.gif">
-    <link rel="preload" as="image" href="img/books/OKbookSTILL.png">
 </html>
