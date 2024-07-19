@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>78</title>
+<style>
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+html {
+    overflow-y: hidden;
+    overscroll-behavior: none;
+}
+body {
+    margin: 0;
+    font-family: BIZGothic;
+}
+.text {
+    position: absolute;
+    font-size: 10vh;
+    filter: blur(1px);
+    right: 0;
+    margin-left: 40vw;
+    margin-top: 30vh;
+}
+.text-block{
+    position: absolute;
+    font-size: xx-large;
+    filter: blur(1.2px);
+    display: none;
+}
+#right{
+    right: 15px;
+    top: 30vh;
+}
+#left{
+    left: 45px;
+    top: 40vh;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    margin: 50px;
+    height: 100vh;
+    pointer-events: none;
+    color:rgb(53, 53, 153);
+    display: none;
+    }
+</style>
+<script src="78.js"></script>
+</head>
+<body>
+        <div class="text-block" id="right" style="display:none;">
+            The nature and interpretation of each of the concepts presented in our guide
+        </div>
+        <div class="text-block" id="left" style="display:none;">
+            For a while they will come back. The facts indicate so. It speaks to the difficulty hinging on your screen door. It misses dinner
+        </div>
+    <img src="img/rattlesnake.png" id="rattle" width="2080" height="1143" usemap="#image-map">
+    <div class="text">
+        In our way of thinking it does no good to quote prices. We want it distinctly understood that we are not selling out at cost. 
+    </div>
+    <canvas id="textCanvas"></canvas>
+</body>
+<map name="image-map">
+    <area onmouseover="mouseover('right')" onmouseleave="mouseleave()" onclick="reveal('right')" coords="1689,281,184" shape="circle">
+    <area onmouseover="mouseover('left')" onmouseleave="mouseleave()" onclick="reveal('left')" coords="595,254,135" shape="circle">
+</map>
+</html>
