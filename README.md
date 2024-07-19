@@ -1,7 +1,8 @@
-# O.K. company
-We no longer do implements.
-
-##License
+**O.K. company
+**
+_We no longer do implements.
+_
+License
 
 All Rights Reserved
 
