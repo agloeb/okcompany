@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>77</title>
+<style>
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+html {
+    overflow: hidden;
+}
+body {
+    margin: 0;
+}
+#wheels {
+    height: 105vh;
+}
+.text {
+    font-family: BIZGothic;
+    position: absolute;
+    font-size: 3vh;
+    filter: blur(.7px);
+    z-index: 1;
+    right: 0;
+    margin-left: 40vw;
+    margin-top: 30vh;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+}
+</style>
+</head>
+<body>
+
+    <div class="text">
+        Yikes. The way the shower paint—<br>
+        <br>Looks like an underpainting.
+        <br>If you take a few steps back though, it doesn’t seem to mind the space.
+        <br><br>I’m not sure.
+        <br>Get out the picture of that tiny house the tiny picture I mean who did that one? It’s got the same thing going. I get the same thing going when it’s late out and I’m still walking around mean, you know how people say I got a yellowness to me.
+        <br><br><br>Don’t get a color from people. 
+        <br>Well I’ve done it before and’ll do it again by the time I get back to the wide spot in the road where I’m meeitng Romana’s kid Shallot later tonight. Says he’s found the only way up to the top of them turbines. Got to bust through the maintainence door with a hammer but he’s strong. Don’t matter how loud it is, could be rubber could be steel, no one’s around to hear. Then we’ll just shimmy up to Hong Kong. 
+<br>Why?
+<br>Shallot says there’s a lot of crazy shit in those big tubes, like spyware and cameras we ain’t never seen before. For me, I would just like to see him trying to explain it all when we reach for techno-glory and get a three-hundred foot ladder. He’s so worried about one of the arms flying off and stabbing him while he’s working in the field. Hundred foot blade stabbing him. Thru him and into the dirt of his cedar covered eighty acres. 
+    </div>
+    <img src="img/ok-wheels.png" id="wheels">
+    <canvas id="textCanvas"></canvas>
+
+</body>
+<script>
+    function randomizePixels() {
+        const pieceElement = document.querySelector('.text');
+        const canvas = document.getElementById('textCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const rect = pieceElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const fontSize = window.getComputedStyle(pieceElement).fontSize;
+        ctx.font = `${fontSize} BIZGothic`;
+        ctx.fillStyle = 'rgb(68, 68, 205)';
+        ctx.textBaseline = 'top';
+        const maxWidth = canvas.width;
+
+        function wrapText(text, x, y, maxWidth) {
+            let words = text.split(' ');
+            let line = '';
+            const lineHeight = parseInt(fontSize, 10);
+
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const testWidth = ctx.measureText(testLine).width;
+
+                if (testWidth > maxWidth && n > 0) {
+                    ctx.fillText(line, x, y);
+                    line = words[n] + ' ';
+                    y += lineHeight;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, x, y);
+        }
+
+        const startX = 10; // Adjust the starting x position
+        const startY = 20; // Adjust the starting y position
+        wrapText(pieceElement.innerText, startX, startY, maxWidth - startX);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        const numPixelsToRemove = 300000; 
+        for (let i = 0; i < numPixelsToRemove; i++) {
+            const x = Math.floor(Math.random() * canvas.width);
+            const y = Math.floor(Math.random() * canvas.height);
+            const index = (y * canvas.width + x) * 4;
+
+            data[index + 3] = 0;
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+    }
+
+    window.onload = function() {
+        randomizePixels();
+        setInterval(randomizePixels, 300); 
+    }
+</script>
+</html>
