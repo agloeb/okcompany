@@ -139,3 +139,21 @@ function toggleGlobeOff(){
         copied.style.display = 'none'
     }
 }
+
+function showDivPeriodically() {
+            const periodicDiv = document.getElementById('periodicDiv');
+
+            setInterval(function() {
+                periodicDiv.style.display = 'block';
+                setTimeout(function() {
+                    periodicDiv.classList.add('jitter-in');
+                }, 10);
+
+                setTimeout(function() {
+                    periodicDiv.classList.remove('jitter-in');
+                    periodicDiv.style.display = 'none';
+                }, 6000); 
+            }, 33000); 
+        }
+
+        window.onload = showDivPeriodically;
