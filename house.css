@@ -116,5 +116,69 @@ html {
       animation-play-state: paused;
       animation: 'fadeInHouse' 0.5s paused;
    }
-   
+.times {
+   font-family: BIZGothic;
+   position: absolute;
+   right: 30vw;
+   top: 10vh;
+   font-size: xx-large;
+   opacity: .6;
+   filter:blur(2px);
+   cursor: pointer;
+}
+#times{
+   text-decoration: none;
+   color: rgb(68, 68, 205);
+}
+#times:hover{
+   background-color: red;
+}
+.jitter-in {
+   animation: jitter .2s linear;
+}
+@keyframes jitter {
+   0% {
+       opacity: 0;
+       transform: translate(1px, -1px);
+   }
+   10% {
+       opacity: .5;
+       transform: translate(-1px, 1px);
+   }
+   20% {
+       opacity: .6;
+       transform: translate(1px, -0px);
+   }
+   30% {
+       opacity: .6;
+       transform: translate(-1px, 1px);
+   }
+   40% {
+       opacity: .0;
+       transform: translate(0px, 0px);
+   }
+   50% {
+       opacity: .5;
+       transform: translate(0px, 0px);
+   }
+   60% {
+       opacity: .6;
+       transform: translate(0px, -1px);
+   }
+   70% {
+       opacity: .4;
+       transform: translate(-1px, 1px);
+   }
+   80% {
+       opacity: .6;
+       transform: translate(1px, -1px);
+   }
+   90% {
+       opacity: .6;
+       transform: translate(0px, 0px);
+   }
+   100% {
+       opacity: .6;
+       transform: translate(0, 0);
+   }
 }
