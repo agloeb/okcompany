@@ -1,4 +1,4 @@
-##O.K. company##
+O.K. company
 
 _We no longer do implements._
 _ _ _ _ _
