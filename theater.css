@@ -31,21 +31,30 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;
 }
 .masterContainer{
-  max-width: 600px; /* Adjust this value as needed */
+  max-width: 600px;
   margin: 0 auto;
   padding: 10px;
   border: none;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 200px); /* Adjust height as needed */
-  gap: 10px; /* Adjust spacing between GIFs */
-  
+  grid-template-rows: repeat(2, 200px);
+  gap: 10px; 
+  opacity: 0;
+  animation: fade 3s linear 5s forwards;
+}
+@keyframes fade{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .gif {
   width: 100%;
