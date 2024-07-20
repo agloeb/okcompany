@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>80</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    ;
+}
+a {
+    cursor: pointer;
+    font-family: BIZGothic;
+    font-size: xx-large;
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    background-color: red;
+}
+#ok {
+    transform: skew(4deg);
+}
+
+.hoverable{
+    position: absolute;
+}
+
+@media (max-width: 600px) {
+    .hoverable {
+        width: 100vw;
+    }
+    body {
+        text-wrap:wrap;
+        overflow-y: scroll;
+    }
+    img {
+        left: 20px;
+        top: 103px;
+    }
+}
+img {
+    position: absolute;
+    z-index: -1;
+    opacity: .6;
+}
+#text-canvas {
+    position: absolute;
+}
+</style>
+</head>
+<body>
+<canvas id="textCanvas"></canvas>
+<div class="hoverable">
+    <a href="grains/grain.html">grain</a>&nbsp_&nbsp<a href="grains/abel.html">Abel & Bohemil</a>&nbsp_&nbsp<a href="grains/tillie.html">Tillie</a>&nbsp_&nbsp<a href="grains/kramel.html">Kramel</a>
+    &nbsp_&nbsp<a href="grains/steely.html">Steely Joe</a>&nbsp_&nbsp<a href="grains/whitesox.html">White Socks</a>&nbsp_&nbsp
+    <a href="grains/romana.html">Romana</a>&nbsp_&nbsp<a href="grains/ginger.html">Ginger</a>&nbsp_&nbsp<a href="grains/../manuals.html">puffed up</a>&nbsp_&nbsp<a href="grains/connie.html">Connie
+    </a>&nbsp_&nbsp<a href="grains/dale.html">Dale & Laverna</a>&nbsp_&nbsp<a href="grains/beryl.html">Beryl</a>&nbsp_&nbsp<a href="grains/buckshot.html">buckshotpheasant</a>&nbsp_&nbsp
+    <a href="grains/lavern.html">LaVern</a>&nbsp_&nbsp<a href="grains/wilda.html">Wilda</a>&nbsp_&nbsp<a href="grains/shoemaker.html">The Shoemakers</a>
+    <a href="grains/sophir.html">sophir morris paint & wallcoverings</a>&nbsp_&nbsp<a href="grains/../index.html">OK company implements & hardware & cash store if we get things rolling</a>&nbsp_&nbsp
+    <a href="grains/capri.html">Capri Motel</a>&nbsp_&nbsp<a href="grains/hazel.html">Hazel</a>&nbsp_&nbsp<a href="grains/humphrey.html">Humphrey</a>&nbsp_&nbsp<img src="img/cooler.png"> 
+    <a href="grains/cashstore.html">restaurant food</a>&nbsp_&nbsp<a href="grains/cashstore.html">restaurant food</a>&nbsp_&nbsp<a href="grains/cashstore.html">restaurant food</a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>
+    ?<a>?<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>
+    <a></a>&nbsp_&nbsp<a href="grains/cashstore.html">restaurant food</a>&nbsp_&nbsp<a href="grains/cashstore.html">restaurant food</a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a href="grains/crazyhorse.html">Ralph & Billy</a>
+    &nbsp_&nbsp<a>Lonnie</a>&nbsp_&nbsp<a href="grains/leona.html">Leona</a>&nbsp_&nbsp<a href="grains/cecilia.html">Cecilia</a>&nbsp_&nbsp
+    <a href="grains/runoff.html">runoff</a>&nbsp_&nbsp<a href="grains/pond.html">pond</a><br><br>
+    <a href="grains/building.html">The building and business changed ownership for the first time in three decades.</a>&nbsp_&nbsp<a href="grains/mp3.html">MP3 version 2012</a>
+    &nbsp_&nbsp<a>Morrowville Propane Services</a>&nbsp_&nbsp<a>15 dollars from Morrowville Propane Services</a>
+    &nbsp_&nbsp<a>Arna</a>&nbsp_&nbsp<a>Susie & Merle</a>&nbsp_&nbsp&nbOK companyOKKOlachessp/_&nbsp<a>restaurant food</a>&nbsp_&nbsp<a>restaurant food</a>&nbsp_&nbsp<a>Honey</a>&nbsp_&nbsp<a></a>
+    *?<a></a>&nbsp_&nbsp<a>greetings I'm from </a>&nbsp_&nbsp<a>July 20-21</a>&nbsp_&nbsp<a>Lou</a>&nbsp_&nbsp<a>Big Lots</a>&nbsp_&nbsp<a>Hubbel</a>&nbsp_&nbsp<a>friends of LaVern</a>&nbsp_&nbsp
+    <a>ray's apple market</a>&nbsp_&nbsp<a>cafe</a>&nbsp_&nbsp<a>and watching the game</a>
+    <a>Republic County Water</a>&nbsp_&nbsp<a>NextEra Energy</a>&nbsp_&nbsp<a>Solices</a>&nbsp_&nbsp<a>Van & Charlie</a>&nbsp_&nbsp<a>vitamevas</a>&nbsp_&nbsp
+    <br><a href="grains/grain.html">Grane</a>&nbsp_&nbsp<a>Abel & Bohamil</a>&nbsp_&nbsp<a>Tillia</a>&nbsp_&nbsp<a>Kramel</a>&nbsp_&nbsp<a>Steel Jay</a>&nbsp_&nbsp<a>White Sox</a>&nbsp_&nbsp
+<a>Romina</a>&nbsp_&nbsp<a>Ginger</a>&nbsp_&nbsp<a>Puffed Up</a>&nbsp_&nbsp<a>Conny</a>&nbsp_&nbsp<a>Dale & Lavern</a>&nbsp_&nbsp<a>Beryl</a>&nbsp_&nbsp<a>Buckshot Pheasant</a>&nbsp_&nbsp<a>Lavorn</a>&nbsp_&nbsp<a>Walda</a>&nbsp_&nbsp<a>The Shoomakers</a>
+<a>Sophia Morris Paint & Wallcoverings</a>&nbsp_&nbsp<a>OK Company Implements & Hardware & Cash Store</a>&nbsp_&nbsp
+<a>Capri Motal</a>&nbsp_&nbsp<a>Hazle</a>&nbsp_&nbsp<a>Humfrey</a>&nbsp_&nbsp<img src="img/cooler.png"> <a>Restaurant Food</a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>
+<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a></a>
+<a></a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a></a>&nbsp_&nbsp<a>Ralph & Billy</a>&nbsp_&nbsp<a>Lonny</a>&nbsp_&nbsp<a>Leona</a>&nbsp_&nbsp<a>Cecillia</a>&nbsp_&nbsp
+<a>Runnoff</a>&nbsp_&nbsp<a>Pond</a><br><br>
+<a>The Building and Business Changed Ownership for the First Time in Three Decades</a>&nbsp_&nbsp<a>MP3 Version 2012</a>&nbsp_&nbsp<a>Morrowville Propane Services</a>&nbsp_&nbsp<a>15 Dollars from Morrowville Propane Services</a>
+&nbsp_&nbsp<a>Arma</a>&nbsp_&nbsp<a>Susie & Merl</a>&nbsp_&nbsp<a>OK Company</a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a>Restaurant Food</a>&nbsp_&nbsp<a>Hony</a>&nbsp_&nbsp<a></a>
+<a></a>&nbsp_&nbsp<a>Greetings, I'm From</a>&nbsp_&nbsp<a>July 20-21</a>&nbsp_&nbsp<a>Lou</a>&nbsp_&nbsp<a>Big Lotz</a>&nbsp_&nbsp<a>Hubbel</a>&nbsp_&nbsp<a>Friends of Lavern</a>&nbsp_&nbsp
+<a>Ray's Aple Market</a>&nbsp_&nbsp<a>Cafo</a>&nbsp_&nbsp<a>And Watching the Game</a>
+<a>Republic County Water</a>&nbsp_&nbsp<a>NextEra Energy</a>&nbsp_&nbsp<a>Solices</a>&nbsp_&nbsp<a>Van & Charley</a>&nbsp_&nbsp<a>Vitamevas</a>&nbsp_&nbsp
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hoverables = document.querySelectorAll('.hoverable');
+    
+    hoverables.forEach(el => {
+        let isHovered = false;
+        el.addEventListener('click', (e) => {
+            if (!isHovered) {
+                e.preventDefault();
+                el.classList.add('hover');
+                isHovered = true;
+            } else {
+                el.classList.remove('hover');
+                isHovered = false;
+            }
+        });
+        
+        document.addEventListener('click', (event) => {
+            if (!el.contains(event.target)) {
+                el.classList.remove('hover');
+                isHovered = false;
+            }
+        });
+    });
+});
+
+function randomizePixels() {
+        const pieceElement = document.querySelector('body');
+        const canvas = document.getElementById('textCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const rect = pieceElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const fontSize = window.getComputedStyle(pieceElement).fontSize;
+        ctx.font = `${fontSize} BIZGothic`;
+        ctx.fillStyle = 'rgb(68, 68, 005)';
+        ctx.textBaseline = 'top';
+        const maxWidth = canvas.width;
+
+        function wrapText(text, x, y, maxWidth) {
+            let words = text.split(' ');
+            let line = '';
+            const lineHeight = parseInt(fontSize, 10);
+
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const testWidth = ctx.measureText(testLine).width;
+
+                if (testWidth > maxWidth && n > 0) {
+                    ctx.fillText(line, x, y);
+                    line = words[n] + ' ';
+                    y += lineHeight;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, x, y);
+        }
+
+        wrapText(pieceElement.innerText, 0, 0, maxWidth);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        const numPixelsToRemove = 400000; 
+        for (let i = 0; i < numPixelsToRemove; i++) {
+            const x = Math.floor(Math.random() * canvas.width);
+            const y = Math.floor(Math.random() * canvas.height);
+            const index = (y * canvas.width + x) * 4;
+
+            data[index + 3] = 0;
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+    }
+
+    window.onload = function() {
+        randomizePixels();
+        setInterval(randomizePixels, 100); 
+    }
+</script>
+</html>
