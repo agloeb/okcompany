@@ -154,15 +154,6 @@ All our cornflake factories are grandmas or endforend. Turns out we make it all 
 <a id="times" href="100.html">18.00……..100</a><br>
 <a id="times" href="101.html">17.82……..101</a><br>
 </div>
-
-<div class="container" id="globe" >
-    <img src="img/okGlobe2.gif" id="emailImage" width="250px" height="auto" style="cursor:pointer">
-    <p id="emailAddress" style="display: none;">addison@okcompany.org</p>
-</div>
-<div class="container">
-    <p id="copied" style="display: none;">email copied</p>
-</div>
-
 <canvas id="textCanvas"></canvas>
 </body>
 <script>
@@ -224,24 +215,5 @@ All our cornflake factories are grandmas or endforend. Turns out we make it all 
         randomizePixels();
         setInterval(randomizePixels, 100); 
     }
-
-    function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                const copiedMessage = document.getElementById('copied');
-                copiedMessage.style.display = 'block';
-                setTimeout(function() {
-                    copiedMessage.style.display = 'none';
-                }, 2000);
-            }, function(err) {
-                console.error('Could not copy text: ', err);
-            });
-        }
-
-        document.getElementById('emailImage').addEventListener('click', function() {
-            const email = document.getElementById('emailAddress').textContent;
-            copyToClipboard(email);
-        });
-
-    
 </script>
 </html>
