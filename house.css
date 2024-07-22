@@ -17,12 +17,10 @@ html {
     display: block;
     opacity: 1!important;
     margin: 0 auto;
-    animation-name: 'fadeOut';
-    animation-duration: 0.5s;
-    animation-play-state: paused;
-    animation: 'fadeInHouse' 0.5s paused;
  }
- 
+ #houseImgMobile {
+    display: none;
+}
  @media only screen and (max-width: 600px) {
     .houseContainer{
        position: relative;
@@ -32,14 +30,17 @@ html {
        justify-content: center;
        align-items: center;
     }
-    #houseImg{
-       display: block;
-       width: 90vw;
-       height: auto;
-       opacity: 1!important;
-       margin: 0 auto;
- 
-    }}
+    #houseImg {
+        display: none;
+    }
+
+    #houseImgMobile {
+        display: block;
+        margin: 0 auto;
+        opacity: 1!important;
+
+    }
+}
  .times {
     font-family: BIZGothic;
     position: absolute;
