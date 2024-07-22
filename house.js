@@ -91,55 +91,6 @@ setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
   document.getElementById("headhouse").src="img/headhouse.png";
 }
 
-function toggleGlobe(){
-    var globe = document.getElementById('globe');
-    var house = document.getElementById('house');
-    if (globe.style.display === 'none'){
-        globe.style.display = 'block';
-        globe.style.animation = 'fadeIn forwards 0.5s'
-        house.style.animation = 'fadeOut forwards 0.5s';            } else {
-        globe.style.display = 'none';
-        globe.style.animation = 'fadeOutGlobe forwards 0.5s';
-        house.style.opacity = '1';
-    } 
-}
-document.addEventListener('DOMContentLoaded', function() {
-    const emailImage = document.getElementById('emailImage');
-    emailImage.addEventListener('click', () => {
-        const emailAddress = document.getElementById('emailAddress').innerText;
-        
-        const textarea = document.createElement('textarea');
-        textarea.value = emailAddress;
-        document.body.appendChild(textarea);
-        
-        textarea.select();
-        document.execCommand('copy');
-        
-        document.body.removeChild(textarea);
-
-        const copied = document.getElementById('copied').innerText;
-        const temptext = document.createElement('temptext');
-        temptext.value = copied;
-        document.body.appendChild(temptext);
-    });
-});
-function toggleGlobeOff(){
-    var globe = document.getElementById('globe');
-    var house = document.getElementById('house');
-    var copied = document.getElementById('copied');
-    if (globe.style.display === 'block'){
-        globe.style.animation = 'fadeOutGlobe forwards 0.5s';
-        globe.style.display = 'none';
-        house.style.animation = 'fadeInHouse forwards 3s';
-        copied.style.display = 'block';
-        copied.style.animation = 'fadeInOut forwards 2s';
-    }
-
-    function toggleCopied(){
-        copied.style.display = 'none'
-    }
-}
-
 function showDivPeriodically() {
             const periodicDiv = document.getElementById('periodicDiv');
 
