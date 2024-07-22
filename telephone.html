@@ -1,49 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>O.K. company</title>
-        <script>
-            function mouseover(x){
-                switch (x) {
-                    case 'left horizon':
-                        {
-                            document.getElementById("imageId").src="img/telephone post/telephoneLEFThorizon.png"
-                        };
-                        break;
-                    case 'right horizon':
-                    {
-                            document.getElementById("imageId").src="img/telephone post/telephoneRIGHTcloud.png"
-                        };
-                        break;
-                    case 'posts':
-                    {
-                            document.getElementById("imageId").src="img/telephone post/telephoneTELE.png"
-                        };
-                        break;
-                    case 'clouds':
-                    {
-                            document.getElementById("imageId").src="img/telephone post/telephoneTOPcloud.png"
-                        };
-                        break;
-                }
-            }
-            function mouseleave() {
-          document.getElementById("imageId").src="img/telephone post/posthalftone.png";
-        }
-        
-        </script>
-    </head>
-    <main>
-        <div class="box">
-            <div class="imgwrap"> 
-                <img src="img/telephone post/posthalftone.png" id="imageId" width=700 height=auto usemap="#map">
-            </div>
-        <map name="map">
-            <area onmouseover="mouseover('left horizon')" onmouseleave="mouseleave()" href="rat.html" target="_parent" alt="left horizon" title="left horizon" href="" coords="365,409,366,384,287,376,226,374,176,372,122,365,77,362,38,358,1,344,1,407,160,403,246,406,275,399,312,401,321,410" shape="poly">
-            <area onmouseover="mouseover('right horizon')" onmouseleave="mouseleave()" href="rat.html" target="_parent" alt="right horizon" title="right horizon" href="" coords="397,408,398,388,412,388,419,380,445,380,472,383,495,382,547,372,575,372,595,362,623,349,645,342,688,337,700,332,699,437,688,432,676,414,650,410,638,433,615,430,613,403,622,393,618,386,606,386,593,385,584,389,594,401,602,412,602,430,493,417,485,405,467,407,462,415,451,414,445,402,429,402,418,415" shape="poly">
-            <area onmouseover="mouseover('posts')" onmouseleave="mouseleave()" href="rat.html" target="_parent" alt="posts" title="posts" href="" coords="368,409,367,376,368,365,357,365,356,345,408,341,414,376,399,376,397,408" shape="poly">
-            <area onmouseover="mouseover('clouds')" onmouseleave="mouseleave()" href="rat.html" target="_parent" alt="clouds" title="clouds" href="" coords="0,170,42,157,74,125,57,109,28,93,1,91,1,29,73,23,126,34,150,67,174,97,213,103,269,95,299,98,333,110,375,118,443,125,522,125,607,126,635,131,685,126,699,116,696,3,6,1,0,13" shape="poly">
-        </map>
-    </main>
-    <link rel="stylesheet" href="tele.css">
+<head>
+<title>O.K. company</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+@font-face {
+    font-family: BIZGothic;
+    src: url('fonts/BIZUDGothic-Regular.ttf');
+}
+* {
+    overflow: hidden;
+}
+body {
+    font-family: BIZGothic;
+    margin: 0;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#emailImage {
+    width: 30vw;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+@media (max-width: 600px){
+    #emailImage{
+        width:70vw;
+    }
+}
+</style>
+<body>
+    <div class="container" id="globe">
+      <div>
+        <img src="img/quality ring/okGlobe.gif" id="emailImage" width="250px" height="auto" style="cursor:pointer">
+        <p id="emailAddress" style="display: none;">addison@okcompany.org</p>
+      </div>
+    </div>
+    <div id="popup" class="popup">email copied</div>
+  </body>
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+    setTimeout(() => {
+      popup.style.opacity = '1';
+    }, 10);
+    setTimeout(function() {
+      popup.style.opacity = '0';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 300);
+    }, 2000);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+}
+
+document.getElementById('emailImage').addEventListener('click', function() {
+  const email = document.getElementById('emailAddress').textContent;
+  copyToClipboard(email);
+});
+</script>
 </html>
