@@ -2,7 +2,7 @@ function mouseover(x){
             switch (x) {
                 case 'ok':
                     {
-                    document.getElementById("base-image").src="img/OPERATORbkgOK.png"
+                    document.getElementById("base-image").src="img/operator/OPERATORbkgOK.png"
                     };
                 }}
         function mouseleave() {
