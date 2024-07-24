@@ -6,6 +6,7 @@
 body{
    font-family: BIZGothic;
    margin: 0;
+   background-image: url('img/operator/noise.png');
 }
 
 .control-panel {
