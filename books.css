@@ -1,79 +1,104 @@
 html{
-    overflow: hidden!important;
+  overflow: hidden!important;
 }
 
 @font-face {
-    font-family: BIZGothic;
-    src: url(fonts/BIZUDGothic-Regular.ttf);
-  }
+  font-family: BIZGothic;
+  src: url(fonts/BIZUDGothic-Regular.ttf);
+}
  
-main{
-    font-family: BIZGothic;
- }
+body{
+  font-family: BIZGothic;
+}
  
 header {
-    font-size:large;
-    font-family:'BIZGothic';
- }
+  font-size:large;
+  font-family:'BIZGothic';
+}
  
 .contents{
-    height:100%;
-    width:300px;
-    position:fixed;
-    z-index:1;
-    top:0;
-    left:0;
-    overflow-x:hidden;
-    margin-top: 20px;
-    margin-left:20px;
-    -ms-overflow-style: none;  
-    scrollbar-width: none; 
+  height:100%;
+  width:300px;
+  position:fixed;
+  z-index:101;
+  top:0;
+  left:0;
+  overflow-x:hidden;
+  margin-top: 20px;
+  margin-left:20px;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
 }
 .contents::-webkit-scrollbar { 
-    display: none;  
- }
+  display: none;  
+}
 
 button{
-    background: none!important;
-    border: none;
-    padding: 0!important;
-    /*optional*/
-    font-family: 'BIZGothic';
-    /*input has OS specific font-family*/
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    cursor:pointer;
-    font-size:medium;
-  }
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: 'BIZGothic';
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor:pointer;
+  font-size:medium;
+}
 button:hover{
   background-color: red !important;
   transition: all .3s ease-in-out !important;
-  }
+}
 
 .frame{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 320px);
+  display: block;
   height: 100vh;
   left: 320px;
-  }
-.frameImg{
+  top: 0;
+}
+.hog{
   position: absolute;
-  height: 110vh;
   z-index: 100;
-  }
+  left: 50px;
+  height: 800px;
+}
+.cent{
+  position: absolute;
+  left: 850px;
+  top: 200px;
+  height: 700px;
+}
 .books{
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(100% - 320px);
-  height: 100vh;
-  left: 320px;
+  left: 150px;
+  top: 225px;
+}
+.img-block{
+  height: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+  .contents{
+    position: absolute;
   }
-.books img{
-  position: absolute;
-  height: 50vh;
+  .frame {
+    left: 0;
+    top: 700px;
+  }
+  .hog{
+    width: 390px;
+    height: auto;
+    left: 15px;
+  }
+  .cent{
+    left: 0px;
+    top: 350px;
+  }
+  .books{
+    position: absolute;
+    top: 115px;
+    left: 100px;
+  }
+  .img-block{
+    height: 170px;
+  }
 }
