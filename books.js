@@ -1,19 +1,35 @@
-function toggleDescription(id) {
-    var descriptions = document.querySelectorAll('.description');
-    descriptions.forEach(function(description) {
-        description.style.display = 'none';
+function toggleText(textId) {
+    var textBlocks = document.querySelectorAll('.text-block');
+    var currentBlock = document.getElementById(textId);
+    
+    textBlocks.forEach(function(block) {
+        if (block === currentBlock) {
+        if (block.style.display === 'none' || block.style.display === '') {
+            block.style.display = 'block';
+            block.style.zIndex = 1;
+        } else {
+            block.style.display = 'none';
+        }
+        } else{
+            block.style.display = 'none';
+        }
     });
+} 
 
-    var description = document.getElementById(id);
-    description.style.display = 'block';
-}
-
-function toggleBook(id) {
-    var images = document.querySelectorAll('.books img');
-    images.forEach(function(image) {
-        image.style.display = 'none';
+function toggleImg(imgId) {
+    var imgBlocks = document.querySelectorAll('.img-block');
+    var currentBlock = document.getElementById(imgId);
+    
+    imgBlocks.forEach(function(block) {
+        if (block === currentBlock) {
+            if (block.style.display === 'none' || block.style.display === '') {
+                block.style.display = 'block';
+                block.style.zIndex = 1;
+            } else {
+                block.style.display = 'none';
+            }
+        } else{
+            block.style.display = 'none';
+        }
     });
-
-    var image = document.getElementById(id);
-    image.style.display = 'block';
-}
+} 
