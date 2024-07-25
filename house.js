@@ -12,6 +12,7 @@ setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
 
         setInterval(changeHouse, 4000);
 
+document.addEventListener("DOMContentLoaded", function() {
     function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -39,6 +40,7 @@ setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
     }
 
     flickerInterval = setInterval(changeImage, intervalTime);
+});
 
     function mouseover(x){
         switch (x) {
