@@ -14,12 +14,26 @@ img{
     width: auto;
     height: 810px;
     display: block;
-    position: relative;
+    position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
 }
+#alt{
+    animation: flash 10s linear 2s infinite;
+    opacity: 0;
+    z-index: 5;
+}
+@keyframes flash {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
 </style>
 <body>
+    <img src="img/highbanksOKalt.png" id="alt">
     <img src="img/highbanksOK.png">
 </body>
 </html>
