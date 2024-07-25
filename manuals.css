@@ -1,65 +1,85 @@
 @font-face {
-    font-family: BIZGothic;
-    src: url(fonts/BIZUDGothic-Regular.ttf);
-  }
+  font-family: BIZGothic;
+  src: url(fonts/BIZUDGothic-Regular.ttf) format('truetype');
+}
 
-  main{
-    font-family: BIZGothic;
- }
+html{
+  font-family: BIZGothic;
+}
 
 header {
-    font-size:large;
-    font-family: 'BIZGothic';
+  font-size:large;
+  font-family: 'BIZGothic'; 
+  position: fixed;
+  width: 100vw;
+}
+.button-image1{
+  right: 70px;
+  top: 15px;
+  position: absolute;
+  overflow: none;
 }
 
 button {
-    background: none!important;
-    border: none;
-    padding: 0!important;
-    /*optional*/
-    font-family: 'BIZGothic';
-    /*input has OS specific font-family*/
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    cursor:pointer;
-    font-size:medium;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: 'BIZGothic';
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor:pointer;
+  font-size:medium;
   }
 
-  button:hover{
-    background-color: red !important;
-    transition: all .3s ease-in-out !important;
-  }
+button:hover{
+  background-color: red !important;
+  transition: all .3s ease-in-out !important;
+}
 
-  body{
-    margin-top:20px;
-    margin-left:20px;
-    font-family: BIZGothic;
-  }
+body{
+  margin-top:20px;
+  margin-left:20px;
+  font-family: BIZGothic;
+}
 
 .contents{
-    height:100%;
-    width:300px;
-    position:fixed;
-    z-index:1;
-    top:0;
-    left:0;
-    overflow-x:hidden;
-    margin-top: 20px;
-    margin-left:20px;
+  height:100%;
+  width:300px;
+  margin-top: 150px;
+  position:fixed;
+  z-index:1;
+  overflow-x:hidden;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
-
+.contents::-webkit-scrollbar { 
+  display: none;  
+}
 .box {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding-top:100px;
-    padding-left: 300px;
-    line-height: 2;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:100px;
+  padding-left: 300px;
+  line-height: 2;
 }
 
-.FlexHeadhouse{
-    display:block;
-    align-items: center;
-    justify-content: center;
-    padding-left:200px;
+@media only screen and (max-width: 600px){
+  .button-image1{
+    right: 30px;
+    top: 0;
+  }
+  .box{
+    display: block;
+    position: absolute;
+    top: 50vh;
+    right: 0;
+    width: 100vw;
+  }
+  header{
+    position: absolute;
+  }
+  .contents{
+    position: absolute;
+  }
 }
