@@ -96,10 +96,11 @@ body{
   }
   header{
     position: absolute;
+    height: 150px;
   }
   .contents{
     position: absolute;
-    top: 150px;
+    top: 170px;
     left: 0;
   }
   .column1{
