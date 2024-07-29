@@ -99,11 +99,11 @@ html {
         transform: translate(1px, -1px);
     }
     90% {
-        opacity: .6;
+        opacity: .0;
         transform: translate(0px, 0px);
     }
     100% {
-        opacity: .6;
-        transform: translate(0, 0);
+        opacity: .2;
+        transform: translate(1, -1px);
     }
  } 
