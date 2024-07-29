@@ -8,6 +8,7 @@
     <link rel="preload" as="image" href="img/manuals/claygutOFF.png">
     <script src="manuals.js"></script>   
 </head>
+<body>
 <header>
     <a href="index.html">
         <img src="img/quality ring/qualityOK.png" width="100" height="100"
@@ -15,58 +16,56 @@
         onmouseout="this.src='img/quality ring/qualityOK.png';">
     </a>
     <div>
-        <img src="img/manuals/claygutOFF.png" width="100" data-alt-src="img/manuals/claygutON.png" class="button-image1 toggle-image">
+        <img src="img/manuals/claygutOFF.png" width="100" data-alt-src="img/manuals/claygutON.png" class="button-image1 toggle-image" onclick="toggleText('operator')">
     </div>
-    <br><br>
-    OPERATOR'S MANUALS
 </header>
 <div class="contents">
-    <div>
-        <br><br>
-        <button onclick="toggleText('elevator')">elevator</button>
-            <div id="elevator" class="text-block" style="display: none;">
-                <button onclick="toggleImg('headhouse')">.......headhouse</button>
-                <br>
-                <button onclick="toggleImg('cornflake')">.......cornflake</button>
-                <br>
-                <button onclick="toggleImg('tarp')">.......putting tires on the tarp</button>
-            </div> 
-            <br><br>
-        <button onclick="toggleText('dowsing')">dowsing</button>
-            <div id="dowsing" class="text-block" style="display: none;">
-                <button onclick="toggleImg('ask1')">.......making your final selection</button>
-                <br>
-                <button onclick="toggleImg('ask2')">.......making your next selection</button>
-                <br>
-                <button onclick="toggleImg('queenie')">.......reselection</button>
-            </div>
-            <br><br>
-        <button onclick="toggleText('loop')">loop</button>
-            <div id="loop"class="text-block" style="display: none;">
-                <button onclick="toggleImg('plaster1')">.......panelling on plaster</button><br>
-                <button onclick="toggleImg('plaster2')">.......panelling on plaster</button><br>
-                <button onclick="toggleImg('plaster3')">.......panelling on plaster</button>
-            </div>
-            <br><br>
-        <button onclick="toggleText('table')">table of contents</button>
-            <div id="table" class="text-block" style="display: none;">
-                <button onclick="toggleImg('')">.......Chapter 3</button>
-            </div>
-            <br><br>
-        <button onclick="toggleText('innards')">innards and ethernice</button>
-            <div id="innards" class="text-block" style="display: none;">
-                <button onclick="toggleImg('ethernice1')">.......</button><br>
-                <button onclick="toggleImg('ethernice2')">.......</button><br>
-                <button onclick="toggleImg('ethernice3')">.......</button>
-            </div>
-            <br><br>
-        <button onclick="toggleText('COE')">COE</button>
-            <div id="COE" class="text-block" style="display: none;">
-                <button onclick="toggleImg('transtar')">.......Transtar</button>
-            </div>
-            <br><br>
-        <button onclick="toggleText('operator')">operator</button>
-    </div>
+        <div class="column1">
+            <button>elevator</button>
+                <div id="elevator" class="text-block">
+                    <button onclick="toggleImg('headhouse')">.......headhouse</button>
+                    <br>
+                    <button onclick="toggleImg('cornflake')">.......cornflake</button>
+                    <br>
+                    <button onclick="toggleImg('tarp')">.......putting tires on the tarp</button>
+                </div> 
+                <br><br>
+            <button onclick="toggleText('dowsing')">dowsing</button>
+                <div id="dowsing" class="text-block">
+                    <button onclick="toggleImg('ask1')">.......making your final selection</button>
+                    <br>
+                    <button onclick="toggleImg('ask2')">.......making your next selection</button>
+                    <br>
+                    <button onclick="toggleImg('queenie')">.......reselection</button>
+                </div>
+        </div>
+        <div class="column2">
+            <button onclick="toggleText('loop')">loop</button>
+                <div id="loop"class="text-block">
+                    <button onclick="toggleImg('plaster1')">.......panelling on plaster</button><br>
+                    <button onclick="toggleImg('plaster2')">.......panelling on plaster</button><br>
+                    <button onclick="toggleImg('plaster3')">.......panelling on plaster</button>
+                </div>
+                <br><br>
+            <button onclick="toggleText('table')">table of contents</button>
+                <div id="table" class="text-block" >
+                    <button onclick="toggleImg('')">.......Chapter 3</button>
+                </div>
+        </div>
+        <div class="column3">
+            <button onclick="toggleText('innards')">innards and ethernice</button>
+                <div id="innards" class="text-block">
+                    <button onclick="toggleImg('ethernice1')">.......</button><br>
+                    <button onclick="toggleImg('ethernice2')">.......</button><br>
+                    <button onclick="toggleImg('ethernice3')">.......</button>
+                </div>
+                <br><br>
+            <button onclick="toggleText('COE')">COE</button>
+                <div id="COE" class="text-block">
+                    <button onclick="toggleImg('transtar')">.......Transtar</button>
+                </div>
+                <br><br>
+        </div>
 </div>
 <div class="box">
     <div class="img-block" id="headhouse" style="display: none;">
@@ -100,7 +99,7 @@
     </div>
     <div class="img-block" id="ethernice3" style="display: none;">
     </div>
-    <div class="text-block" id="operator" style="display: none;">
+    <div class="text-block" id="operator" style="display: none; z-index: 0;">
         <p>
             Rat proof (on/off) 
             <br>
@@ -144,6 +143,10 @@
             Shape of a hook you can tell where you are by the shape of a hook. You can tell where you are by the slope of a hill and how hard it sends your balls into your stomach
         </p>
     </div>
+    <div class="img-block" id="transtar" style="display: none;">
+        <img src="img/manuals/transtar.png" width="600px">
+    </div>
 </div>
 </div>
+</body>
 </html>
