@@ -105,8 +105,8 @@ function showDivPeriodically() {
                 setTimeout(function() {
                     periodicDiv.classList.remove('jitter-in');
                     periodicDiv.style.display = 'none';
-                }, 6000); 
-            }, 33000); 
+                }, 7000); 
+            }, 23000); 
         }
 
         window.onload = showDivPeriodically;
