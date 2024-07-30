@@ -92,6 +92,10 @@ body{
     right: 30px;
     top: 0;
   }
+    .button-image2{
+    right: 130px;
+    top: 0;
+  }
   .box{
     display: block;
     position: absolute;
