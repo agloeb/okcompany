@@ -19,7 +19,12 @@ header {
   top: 15px;
   position: absolute;
   overflow: none;
-
+}
+.button-image2{
+  right: 180px;
+  top: 15px;
+  position: absolute;
+  overflow: none;
 }
 
 button {
@@ -100,7 +105,7 @@ body{
   }
   .contents{
     position: absolute;
-    top: 170px;
+    top: 150px;
     left: 0;
   }
   .column1{
