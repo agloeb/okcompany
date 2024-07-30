@@ -17,12 +17,13 @@
     </a>
     <div>
         <img src="img/manuals/claygutOFF.png" width="100" data-alt-src="img/manuals/claygutON.png" class="button-image1 toggle-image" onclick="toggleText('operator')">
+        <img src="img/manuals/clear.png" width="100" onclick="toggleAllOff(); this.src='img/manuals/clearFire.png'" onmouseleave="this.src='img/manuals/clear.png'" class="button-image2">
     </div>
 </header>
 <div class="contents">
         <div class="column1">
             <button>elevator</button>
-                <div id="elevator" class="text-block">
+                <div id="elevator">
                     <button onclick="toggleImg('headhouse')">.......headhouse</button>
                     <br>
                     <button onclick="toggleImg('cornflake')">.......cornflake</button>
@@ -30,8 +31,8 @@
                     <button onclick="toggleImg('tarp')">.......putting tires on the tarp</button>
                 </div> 
                 <br><br>
-            <button onclick="toggleText('dowsing')">dowsing</button>
-                <div id="dowsing" class="text-block">
+            <button>dowsing</button>
+                <div id="dowsing">
                     <button onclick="toggleImg('ask1')">.......making your final selection</button>
                     <br>
                     <button onclick="toggleImg('ask2')">.......making your next selection</button>
@@ -40,28 +41,28 @@
                 </div>
         </div>
         <div class="column2">
-            <button onclick="toggleText('loop')">loop</button>
-                <div id="loop"class="text-block">
+            <button>loop</button>
+                <div id="loop">
                     <button onclick="toggleImg('plaster1')">.......panelling on plaster</button><br>
                     <button onclick="toggleImg('plaster2')">.......panelling on plaster</button><br>
                     <button onclick="toggleImg('plaster3')">.......panelling on plaster</button>
                 </div>
                 <br><br>
-            <button onclick="toggleText('table')">table of contents</button>
-                <div id="table" class="text-block" >
+            <button>table of contents</button>
+                <div id="table">
                     <button onclick="toggleImg('')">.......Chapter 3</button>
                 </div>
         </div>
         <div class="column3">
-            <button onclick="toggleText('innards')">innards and ethernice</button>
-                <div id="innards" class="text-block">
+            <button>innards and ethernice</button>
+                <div id="innards">
                     <button onclick="toggleImg('ethernice1')">.......</button><br>
                     <button onclick="toggleImg('ethernice2')">.......</button><br>
                     <button onclick="toggleImg('ethernice3')">.......</button>
                 </div>
                 <br><br>
-            <button onclick="toggleText('COE')">COE</button>
-                <div id="COE" class="text-block">
+            <button>COE</button>
+                <div id="COE">
                     <button onclick="toggleImg('transtar')">.......Transtar</button>
                 </div>
                 <br><br>
@@ -93,9 +94,10 @@
             <img class="gif4" src="img/manuals/scratchy.gif" width="200">    
         </div>
     <div class="img-block" id="ethernice1" style="display: none;">
-        <img src="img/manuals/puddle.gif" width="600">
+        <img src="img/manuals/seat.png" width="1200">
     </div>
     <div class="img-block" id="ethernice2" style="display: none;">
+        <img src="img/manuals/h.png" width="120">
     </div>
     <div class="img-block" id="ethernice3" style="display: none;">
     </div>
@@ -146,7 +148,7 @@
     <div class="img-block" id="transtar" style="display: none;">
         <img src="img/manuals/transtar.png" width="600px">
     </div>
-        <div classs="text-block" id="plaster1" style="display: none;">
+    <div classs="text-block" id="plaster1" style="display: none;">
         <img src="img/manuals/bosler.png" height="550px">
     </div>
     <div classs="text-block" id="plaster2" style="display: none;">
