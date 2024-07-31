@@ -81,11 +81,11 @@ body{
   color: red;
 }
 .label-left {
-  order: -1; /* Move label to the left */
+  order: -1;
 }
 
 .label-right {
-  order: 1; /* Move label to the right */
+  order: 1; 
 }
 button {
   position: absolute;
@@ -103,5 +103,21 @@ button {
 @media only screen and (max-width: 600px){
   .masterContainer{
     width: 100vw;
+  }
+  .silo{
+    content: url('img/theater/theaterZoomMobile.gif');
+    background-color: white;
+  }
+  html{
+    background-color: white;
+    animation: w2b .5s linear 4s forwards;
+  }
+  @keyframes w2b {
+    from {
+      background-color: white;
+    }
+    to {
+      background-color: black;
+    }
   }
 }
