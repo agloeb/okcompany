@@ -1,8 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>half-mile</title>
-    <link rel="stylesheet" href="crap.css">
+<title>half-mile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@font-face {
+font-family: BIZGothic;
+src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+html{
+font-family: 'BIZGothic';
+}
+body{
+margin: 0!important;
+overflow: hidden;
+}
+.bkg{
+width: 100vw;
+height: 110vh;
+}
+.text{
+background-color: none;
+color:rgb(68, 68, 205);
+position: absolute;
+margin: 50px;
+filter: blur(1px);
+font-size: 22px;
+display: inline-block;
+}
+#piece:hover{
+background-color: rgba(130, 185, 247, 0.809);
+filter:blur(3px);
+}
+#crap{
+text-decoration: none;
+color: rgb(59, 59, 183);
+transform: skew(-40deg);
+}
+#crap:hover{
+background-color: rgba(242, 134, 208, 0.809);
+}
+canvas {
+position: absolute;
+top: 0;
+left: 0;
+pointer-events: none; 
+margin: 50px;
+height: 100vh;
+position: absolute;
+top: 0;
+left: 0;
+pointer-events: none; 
+animation: scroll 50s linear infinite;
+}
+@keyframes scroll {
+from {
+    transform: translateX(0%);
+}
+to {
+    transform: translateX(-50%);
+}}
+@media only screen and (max-width: 600px){
+    .bkg{
+        width: 100vh!important;
+        height: auto!important;
+
+    }
+    body{
+        background-color: black;
+    }
+    .text #textCanvas{
+        position: absolute;
+        z-index: 1!important;
+    }
+}
+</style>
 </head>
 <body>
     <div class="text">
