@@ -100,3 +100,8 @@ button {
   padding: 0;
   z-index: 1;
 }
+@media only screen and (max-width: 600px){
+  .masterContainer{
+    width: 100vw;
+  }
+}
