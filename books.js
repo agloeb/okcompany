@@ -1,3 +1,5 @@
+setTimeout(function(){ window.location = 'windmill.html'; }, 300000)
+
 function toggleText(textId) {
     var textBlocks = document.querySelectorAll('.text-block');
     var currentBlock = document.getElementById(textId);
