@@ -1,3 +1,5 @@
+setTimeout(function(){ window.location = 'windmill.html'; }, 300000)
+
 document.addEventListener('DOMContentLoaded', function() {
 const images = document.querySelectorAll('.toggle-image');
 
