@@ -3,21 +3,36 @@
 <head>
 <title>WIND BREAK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" as="video" href="img/windfarm_at_highbanks.mp4">
 </head>
 <style>
-html {
+* {
     overflow: hidden;
     margin: 0;
 }
 body {
     margin: 0;
+    background-color: black;
+    overflow: hidden;
 }
-#wind {
+#wind{
     width: 100vw;
-    bottom: 0px;
+    position: absolute;
+    transform: translateY(-20%);
+}
+@media only screen and (max-width: 600px){
+    #wind{
+        height: 100vh;
+        width: auto;
+        transform: none;
+    }
 }
 </style>
 <body>
-<a href="index.html"><img src="img/windfarm.gif" id="wind"></a>
+<a href="index.html">
+    <video loop autoplay muted id="wind">
+        <source src="img/windfarm_at_highbanks.mp4" type="video/mp4" />
+    </video>     
+</a>
 </body>
 </html>
