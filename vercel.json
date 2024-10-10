@@ -8,18 +8,6 @@
     {
       "src": "pages/api/submit-order.js",
       "use": "@vercel/node"
-   }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/public/index.html"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/public/index.html"
     }
   ],
   "redirects": [
