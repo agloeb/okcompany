@@ -4,7 +4,11 @@
     {
       "src": "public/index.html",
       "use": "@vercel/static"
-    }
+    },
+    {
+      "src": "pages/api/submit-order.js",
+      "use": "@vercel/node"
+   }
   ],
   "routes": [
     {
