@@ -10,11 +10,10 @@
       "use": "@vercel/node"
     }
   ],
-  "redirects": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/public/index.html",
-      "permanent": true
+      "src": "/",
+      "dest": "/public/index.html"
     }
   ]
 }
