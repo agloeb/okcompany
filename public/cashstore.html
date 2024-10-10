@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O.K. cash store</title>
+<script src="https://www.paypal.com/sdk/js?client-id=AZg03j6dCGUUf2l_WuSY9RJgIDujoKnpNZB-Hh5JCdbeMT1pv4Ak3Yy6JI1Ok0GzIQj5uAAGEt31_jGW"></script>
+<style>
+@font-face {
+    font-family: BIZMuncho;
+    src: url(fonts/BIZUDMincho-Regular.ttf);
+}
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+html{
+    font-family: BIZMuncho;
+    margin-left: 25px;
+}
+button{
+    font-family: BIZGothic;
+}
+#paypal-button-container {
+    max-width: 300px;
+    margin-top: 40px;
+}
+#cart{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+#cart-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.total-line {
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+.title-container{
+    display: flex;
+}
+.title, .title-img{
+    flex: 1; 
+    padding: 25px;
+}
+.title{
+    font-size: xx-large;
+    margin-top: 10px;
+}
+.quantity{
+    width: 50px;
+    font-family: BIZGothic;
+}
+select {
+    font-family: BIZGothic;
+}
+.product-card{
+    border: dashed rgb(0, 0, 0) 2px;
+    margin: 15px;
+    width: 515px;
+}
+.product-info{
+    margin: 15px;
+}
+.cart-btn{
+    position: relative;
+    right: 0px;
+}
+.cart-item-sp{
+    border: dashed black 2px;
+    font-size: x-large;
+}
+#submit-order-btn{
+    position: absolute;
+    right: 0;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="title-container">
+        <a href="index.html">
+            <img src="img/quality ring/qualityOK.png" width="100" height="100"
+            onmouseover="this.src='img/quality ring/REDqualityOKwink.png';"
+            onmouseout="this.src='img/quality ring/qualityOK.png';"></a>
+            <div class="title">cash store</div>
+    </div>
+    
+</header>
+<div class="container">
+<div class="product-grid" id="product-grid"></div>
+<div id="cart">
+    <h2>shopping cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary"></div>
+    <div id="paypal-button-container"></div>
+    <div id="paypal-button-container" style="display: none;"></div>
+</div>
+</div>
+
+<form id="orderForm" action="http://your-server-address/submit-order" method="POST" style="display: none;">
+    <input type="text" name="orderDetails" id="orderDetails" value="">
+    <input type="text" name="customerName" id="customerName" value="">
+    <input type="text" name="customerEmail" id="customerEmail" value="">
+    <input type="text" name="totalAmount" id="totalAmount" value="">
+    <input type="text" name="shippingAddress" id="shippingAddress" value="">
+</form>
+<script src="cashstore.js"></script>
+</body>
+</html>
