@@ -28,7 +28,6 @@ button{
 #cart{
     position: absolute;
     right: 25px;
-    top: 25px;
 }
 #cart-summary {
     margin-top: 20px;
@@ -45,6 +44,11 @@ button{
     margin-top: 10px;
     border-top: 1px solid #ddd;
     padding-top: 5px;
+}
+header{
+    position: sticky!important;
+    top: 0;
+    background-color: white;
 }
 .title-container{
     display: flex;
@@ -94,27 +98,18 @@ select {
             onmouseover="this.src='img/quality ring/REDqualityOKwink.png';"
             onmouseout="this.src='img/quality ring/qualityOK.png';"></a>
             <div class="title">cash store</div>
+            <div id="cart">
+                <h2>shopping cart</h2>
+                <div id="cart-items"></div>
+                <div id="cart-summary"></div>
+                <div id="paypal-button-container"></div>
+                <div id="paypal-button-container" style="display: none;"></div>
+            </div>
     </div>
-    
 </header>
 <div class="container">
 <div class="product-grid" id="product-grid"></div>
-<div id="cart">
-    <h2>shopping cart</h2>
-    <div id="cart-items"></div>
-    <div id="cart-summary"></div>
-    <div id="paypal-button-container"></div>
-    <div id="paypal-button-container" style="display: none;"></div>
 </div>
-</div>
-
-<form id="orderForm" action="http://your-server-address/submit-order" method="POST" style="display: none;">
-    <input type="text" name="orderDetails" id="orderDetails" value="">
-    <input type="text" name="customerName" id="customerName" value="">
-    <input type="text" name="customerEmail" id="customerEmail" value="">
-    <input type="text" name="totalAmount" id="totalAmount" value="">
-    <input type="text" name="shippingAddress" id="shippingAddress" value="">
-</form>
 <script src="cashstore.js"></script>
 </body>
 </html>
