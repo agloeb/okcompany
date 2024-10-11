@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    
     if (req.method === 'POST') {
         try {
             const orderData = req.body;

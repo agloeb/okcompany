@@ -137,19 +137,29 @@ function validateProduct(product) {
     }
 });
 function submitOrder(orderData) {
-    fetch('/api/submit-order', { // Use your backend route here
+    fetch('/api/submit-order', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(orderData) // Convert order data to JSON
+        body: JSON.stringify(orderData),
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log("Response received:", response);
+        return response.text();  // Use text() instead of json() to see raw response
+    })
     .then(data => {
-        if (data.success) {
-            alert('Order submitted successfully!');
-        } else {
-            alert('Error submitting order: ' + data.message);
+        console.log("Response data:", data);  // Check if the response is valid JSON
+        try {
+            const jsonData = JSON.parse(data);  // Try parsing manually
+            if (jsonData.success) {
+                alert('Order submitted successfully!');
+            } else {
+                alert('Error submitting order: ' + jsonData.message);
+            }
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            alert('There was an issue with the server response. Please try again.');
         }
     })
     .catch(error => {
