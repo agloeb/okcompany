@@ -6,6 +6,8 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Content-Type', 'application/json');
 
+    console.log("Request Method:", req.method);
+
     if (req.method === 'POST') {
         try {
             // Log the incoming order data
@@ -27,7 +29,7 @@ export default async function handler(req, res) {
             res.status(500).json({ success: false, message: 'An error occurred while processing the order.' });
         }
     } else {
-        // Handle non-POST requests
+        console.error("Method not allowed:", req.method);        
         res.status(405).json({ success: false, message: 'Method not allowed. Use POST.' });
     }
 }
