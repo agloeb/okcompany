@@ -1,7 +1,9 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-    // Ensure that the response is set as JSON
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Content-Type', 'application/json');
 
     if (req.method === 'POST') {
