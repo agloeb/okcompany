@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "vercel dev",
+    "start": "node index.js",
+    "build": "vercel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +15,8 @@
   "dependencies": {
     "express": "^4.21.1",
     "nodemailer": "^6.9.15"
+  },
+  "engines": {
+    "node": "16.x" 
   }
 }
