@@ -18,6 +18,10 @@
     {
       "src": "/(.*)",
       "dest": "/$1.html"
+    },
+    {
+      "src": "/cashstore",
+      "dest": "/public/cashstore.html"
     }
   ]
 }
