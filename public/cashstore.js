@@ -145,11 +145,12 @@ function submitOrder(orderData) {
         body: JSON.stringify(orderData),
     })
     .then(response => {
-        console.log("Response received:", response);
-        return response.text();  // Use text() instead of json() to see raw response
+        console.log("Response received:", response);  // Log the entire response
+        return response.text();  // Return text instead of JSON for debugging
     })
     .then(data => {
-        console.log("Response data:", data);  // Check if the response is valid JSON
+        console.log("Raw response data:", data);  // Log raw response text
+        
         try {
             const jsonData = JSON.parse(data);  // Try parsing manually
             if (jsonData.success) {
@@ -158,15 +159,16 @@ function submitOrder(orderData) {
                 alert('Error submitting order: ' + jsonData.message);
             }
         } catch (error) {
-            console.error('Error parsing JSON:', error);
+            console.error('Error parsing JSON:', error);  // Log parse errors
             alert('There was an issue with the server response. Please try again.');
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Error:', error);  // Log any fetch errors
         alert('An error occurred while submitting the order. Please try again.');
     });
 }
+
 
 function initPayPalButton() {
     const cartTotal = cart.reduce((sum, item) => sum + (item.basePrice * item.quantity), 0) + SHIPPING_FEE;
