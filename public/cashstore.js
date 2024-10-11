@@ -9,6 +9,7 @@ const products = [
 
 let cart = [];
 const SHIPPING_FEE = 10;
+let paypalButtonInitialized = false;
 
 function validateProduct(product) {
             const requiredProps = ['id', 'name', 'basePrice', 'image'];
@@ -64,14 +65,21 @@ function validateProduct(product) {
             const selectedSize = document.getElementById(`size-${productId}`).value;
             const selectedColor = document.getElementById(`color-${productId}`).value;
             const quantity = parseInt(document.getElementById(`quantity-${productId}`).value);
-
+        
             if (product && validateProduct(product)) {
-                cart.push({...product,
-                size: selectedSize,
-                color: selectedColor,
-                quantity: quantity,
-                cartId: Date.now() 
-                });
+                const existingItemIndex = cart.findIndex(item => item.id === productId && item.size === selectedSize && item.color === selectedColor);
+                
+                if (existingItemIndex > -1) {
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    cart.push({
+                        ...product,
+                        size: selectedSize,
+                        color: selectedColor,
+                        quantity: quantity,
+                        cartId: Date.now()
+                    });
+                }
                 renderCart();
             } else {
                 console.error(`Invalid product with id ${productId}`);
@@ -171,8 +179,10 @@ function submitOrder(orderData) {
 
 
 function initPayPalButton() {
+    if (paypalButtonInitialized) return; // Prevent multiple initializations
+
     const cartTotal = cart.reduce((sum, item) => sum + (item.basePrice * item.quantity), 0) + SHIPPING_FEE;
-    
+
     document.getElementById('paypal-button-container').style.display = 'block';
 
     paypal.Buttons({
@@ -213,8 +223,16 @@ function initPayPalButton() {
             alert("There was an issue processing the transaction. Please try again.");
         }
     }).render('#paypal-button-container');
+
+    paypalButtonInitialized = true; // Mark as initialized
 }
 
-        console.log("Calling renderProducts...");
-        renderProducts();
-        console.log("Script finished.");
+document.addEventListener('click', function (event) {
+    if (event.target && event.target.id === 'submit-order-btn') {
+        initPayPalButton();
+    }
+});
+
+console.log("Calling renderProducts...");
+renderProducts();
+console.log("Script finished.");
