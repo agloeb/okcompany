@@ -1,6 +1,6 @@
 @font-face {
    font-family: BIZGothic;
-   src: url(fonts/BIZUDGothic-Regular.ttf);
+   src: url(/public/fonts/BIZUDGothic-Regular.ttf);
  }
 main{
    font-family: BIZGothic;

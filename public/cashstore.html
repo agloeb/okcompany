@@ -8,11 +8,11 @@
 <style>
 @font-face {
     font-family: BIZMuncho;
-    src: url(fonts/BIZUDMincho-Regular.ttf);
+    src: url(/public/fonts/BIZUDMincho-Regular.ttf);
 }
 @font-face {
     font-family: BIZGothic;
-    src: url(fonts/BIZUDGothic-Regular.ttf);
+    src: url(/public/fonts/BIZUDGothic-Regular.ttf);
 }
 html{
     font-family: BIZMuncho;
@@ -93,10 +93,10 @@ select {
 <body>
 <header>
     <div class="title-container">
-        <a href="index.html">
-            <img src="img/quality ring/qualityOK.png" width="100" height="100"
-            onmouseover="this.src='img/quality ring/REDqualityOKwink.png';"
-            onmouseout="this.src='img/quality ring/qualityOK.png';"></a>
+        <a href="/public/index.html">
+            <img src="/public/img/quality ring/qualityOK.png" width="100" height="100"
+            onmouseover="this.src='/public/img/quality ring/REDqualityOKwink.png';"
+            onmouseout="this.src='/public/img/quality ring/qualityOK.png';"></a>
             <div class="title">cash store</div>
             <div id="cart">
                 <h2>shopping cart</h2>
@@ -110,6 +110,6 @@ select {
 <div class="container">
 <div class="product-grid" id="product-grid"></div>
 </div>
-<script src="cashstore.js"></script>
+<script src="/public/cashstore.js"></script>
 </body>
 </html>

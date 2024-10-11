@@ -1,6 +1,6 @@
 setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
 
-const imageSources = ["img/homepage/HOMEPAGE.png", "img/homepage/HOMEPAGEhardware2.png"];
+const imageSources = ["/public/img/homepage/HOMEPAGE.png", "/public/img/homepage/HOMEPAGEhardware2.png"];
 
 let currentIndex2 = 0;
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return array;
 }
 
-var images = ["img/homepage/HOMEPAGEtopleftwindow.png", "img/homepage/HOMEPAGEbottomrightdoor.png", "img/homepage/HOMEPAGEcloud1.png", "img/homepage/HOMEPAGEfrontdoor.png",  "img/homepage/HOMEPAGEtoprightwindow.png",  "img/homepage/HOMEPAGEtelephone.png"];
+var images = ["/public/img/homepage/HOMEPAGEtopleftwindow.png", "/public/img/homepage/HOMEPAGEbottomrightdoor.png", "/public/img/homepage/HOMEPAGEcloud1.png", "/public/img/homepage/HOMEPAGEfrontdoor.png",  "/public/img/homepage/HOMEPAGEtoprightwindow.png",  "/public/img/homepage/HOMEPAGEtelephone.png"];
 var currentIndex = 0;
 var intervalTime = 200;
 var flickerDuration = 900;
@@ -50,49 +50,49 @@ function mouseover(x){
 switch (x) {
     case 'frontdoor':
         {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEfrontdoor.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEfrontdoor.png"
         };
         break;
     case 'sidedoor':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEbottomrightdoor.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEbottomrightdoor.png"
         };
         break;
     case 'toprightwindow':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEtoprightwindow.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEtoprightwindow.png"
         };
         break;
     case 'cloud1':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEcloud1.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEcloud1.png"
         };
         break;
     case 'topleftwindow':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEtopleftwindow.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEtopleftwindow.png"
         };
         break;
     case 'tele':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEtelephone.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEtelephone.png"
         };
         break;
     case 'hardware':
     {
-            document.getElementById("houseImg").src="img/homepage/HOMEPAGEhardware2.png"
+            document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGEhardware2.png"
         };
         break;
     case 'headhouse':
     {
-        document.getElementById("headhouse").src="img/headhouseSLUR.gif"
+        document.getElementById("headhouse").src="/public/img/headhouseSLUR.gif"
     };
     break;
 }
 
 }
 function mouseleave() {
-document.getElementById("houseImg").src="img/homepage/HOMEPAGE.png";
+document.getElementById("houseImg").src="/public/img/homepage/HOMEPAGE.png";
 }
 function showDivPeriodically() {
     const periodicDiv = document.getElementById('periodicDiv');

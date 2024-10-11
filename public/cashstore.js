@@ -1,10 +1,10 @@
 const products = [
-    { id: 1, name: 'quality ring tee', basePrice: 40, image: 'img/cashstore/qualityring_tee_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Natural', 'Ash', 'Black'] },
-    { id: 2, name: 'h & i tee', basePrice: 40, image: 'img/cashstore/h&i_tee_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Natural', 'Ash', 'Black']},
-    { id: 3, name: 'quality ring sweatshirt', basePrice: 65, image: 'img/cashstore/qualityring_sweatshirt_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Ash', 'Black']},
-    { id: 4, name: 'h & i sweatshirt', basePrice: 65, image: 'img/cashstore/h&i_sweatshirt_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Ash', 'Black'] },
-    { id: 5, name: 'h & i sticker', basePrice: 7, image: 'img/cashstore/h&i_sticker.png'},
-    { id: 6, name: 'quality ring pin', basePrice: 5, image: 'img/cashstore/qualityring_pin.png'},
+    { id: 1, name: 'quality ring tee', basePrice: 40, image: '/public/img/cashstore/qualityring_tee_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Natural', 'Ash', 'Black'] },
+    { id: 2, name: 'h & i tee', basePrice: 40, image: '/public/img/cashstore/h&i_tee_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Natural', 'Ash', 'Black']},
+    { id: 3, name: 'quality ring sweatshirt', basePrice: 65, image: '/public/img/cashstore/qualityring_sweatshirt_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Ash', 'Black']},
+    { id: 4, name: 'h & i sweatshirt', basePrice: 65, image: '/public/img/cashstore/h&i_sweatshirt_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Ash', 'Black'] },
+    { id: 5, name: 'h & i sticker', basePrice: 7, image: '/public/img/cashstore/h&i_sticker.png'},
+    { id: 6, name: 'quality ring pin', basePrice: 5, image: '/public/img/cashstore/qualityring_pin.png'},
 ];
 
 let cart = [];

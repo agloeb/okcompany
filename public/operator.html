@@ -3,19 +3,19 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>O.K. operation</title>
-        <link rel="stylesheet" href="operator.css">
-        <link rel="preload" as="image" href="img/operator/OPERATORbkg.png">
-        <link rel="preload" as="image" href=img/operator/OPERATORbkgOK.png>
+        <link rel="stylesheet" href="/public/operator.css">
+        <link rel="preload" as="image" href="/public/img/operator/OPERATORbkg.png">
+        <link rel="preload" as="image" href=/public/img/operator/OPERATORbkgOK.png>
         <script>
             function mouseover(x){
             switch (x) {
                 case 'ok':
                     {
-                    document.getElementById("base-image").src="img/operator/OPERATORbkgOK.png"
+                    document.getElementById("base-image").src="/public/img/operator/OPERATORbkgOK.png"
                     };
                 }}
         function mouseleave() {
-            document.getElementById("base-image").src="img/operator/OPERATORbkg.png";
+            document.getElementById("base-image").src="/public/img/operator/OPERATORbkg.png";
             }
 
             document.addEventListener('DOMContentLoaded', function() {
@@ -49,15 +49,15 @@
     </head>
         <body>
             <div class="control-panel">
-                <img src="img/operator/OPERATORbkg.png" class="base-image" id="base-image" usemap="#image-map">
+                <img src="/public/img/operator/OPERATORbkg.png" class="base-image" id="base-image" usemap="#image-map">
                     <map name="image-map">
                         <area onmouseover="mouseover('ok')" onmouseleave="mouseleave()" target="" alt="ok" title="ok" href="index.html" coords="83,73,47" shape="circle">
                     </map>
                 <div class="buttons">
-                    <img src="img/operator/OPERATORsynchroOFF.png" class="button-image1 toggle-image" id="synchro" data-alt-src="img/operator/OPERATORsynchroON.png">
-                    <img src="img/operator/OPERATORheadhouseOFF.png" class="button-image2 toggle-image" id="headhouse" data-alt-src="img/operator/OPERATORheadhouseON.png">
-                    <img src="img/operator/OPERATORratOFF.png" class="button-image3 toggle-image" id="rat" data-alt-src="img/operator/OPERATORratON.png">
-                    <img src="img/operator/door.png" class="button-image4 toggle-image" id="kauai_door" data-alt-src="img/operator/kauai.png">
+                    <img src="/public/img/operator/OPERATORsynchroOFF.png" class="button-image1 toggle-image" id="synchro" data-alt-src="/public/img/operator/OPERATORsynchroON.png">
+                    <img src="/public/img/operator/OPERATORheadhouseOFF.png" class="button-image2 toggle-image" id="headhouse" data-alt-src="/public/img/operator/OPERATORheadhouseON.png">
+                    <img src="/public/img/operator/OPERATORratOFF.png" class="button-image3 toggle-image" id="rat" data-alt-src="/public/img/operator/OPERATORratON.png">
+                    <img src="/public/img/operator/door.png" class="button-image4 toggle-image" id="kauai_door" data-alt-src="/public/img/operator/kauai.png">
                 </div>
             </div>
         </body>

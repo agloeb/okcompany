@@ -1,4 +1,4 @@
-setTimeout(function(){ window.location = 'windmill.html'; }, 300000)
+setTimeout(function(){ window.location = '/public/windmill.html'; }, 300000)
 
 document.addEventListener('DOMContentLoaded', function() {
 const images = document.querySelectorAll('.toggle-image');
@@ -66,6 +66,6 @@ function toggleAllOff() {
     
     var claygutImage = document.querySelector('.toggle-image');
     if (claygutImage) {
-        claygutImage.src = 'img/manuals/claygutOFF.png';
+        claygutImage.src = '/public/img/manuals/claygutOFF.png';
     }
 }

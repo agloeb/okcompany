@@ -1,12 +1,12 @@
 @font-face {
    font-family: BIZGothic;
-   src: url(fonts/BIZUDGothic-Regular.ttf);
+   src: url(/public/fonts/BIZUDGothic-Regular.ttf);
 }
 
 body{
    font-family: BIZGothic;
    margin: 0;
-   background-image: url('img/operator/noise.png');
+   background-image: url('/public/img/operator/noise.png');
 }
 
 .control-panel {
