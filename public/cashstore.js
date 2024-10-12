@@ -50,7 +50,9 @@ function validateProduct(product) {
                             ${product.colors ? product.colors.map(color => `<option value="${color}">${color}</option>`).join('') : ''}
                             </select>
                             <input type="number" class="quantity" id="quantity-${product.id}" value="1" min="1">
-                            <button class="btn cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+                            <div class="cart-btn-container">
+                                <button class="btn cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 `;

@@ -1,4 +1,4 @@
-setTimeout(function(){ window.location = 'windmill.html'; }, 900000)
+setTimeout(function(){ window.location = '/public/windmill.html'; }, 900000)
 
 const imageSources = ["/public/img/homepage/HOMEPAGE.png", "/public/img/homepage/HOMEPAGEhardware2.png"];
 
