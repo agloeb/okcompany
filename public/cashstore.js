@@ -40,17 +40,19 @@ function validateProduct(product) {
                 }
                 return `
                     <div class="product-card">
-                        <img src="${product.image}" alt="${product.name}" style="width: 500px;">
+                        <img src="${product.image}" alt="${product.name}">
                         <div class="product-info">
-                            <h3>${product.name} -- $${product.basePrice.toFixed(2)}</h3>
-                            <select id="size-${product.id}">
-                            ${product.sizes ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join('') : ''}
-                            </select>
-                            <select id="color-${product.id}">
-                            ${product.colors ? product.colors.map(color => `<option value="${color}">${color}</option>`).join('') : ''}
-                            </select>
-                            <input type="number" class="quantity" id="quantity-${product.id}" value="1" min="1">
-                            <div class="cart-btn-container">
+                            <div class="product-info-1">
+                                <h3>${product.name} -- $${product.basePrice.toFixed(2)}</h3>
+                            </div>
+                            <div class="product-info-2">
+                                <select id="size-${product.id}">
+                                ${product.sizes ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join('') : ''}
+                                </select>
+                                <select id="color-${product.id}">
+                                ${product.colors ? product.colors.map(color => `<option value="${color}">${color}</option>`).join('') : ''}
+                                </select>
+                                <input type="number" class="quantity" id="quantity-${product.id}" value="1" min="1">
                                 <button class="btn cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
                             </div>
                         </div>
