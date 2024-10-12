@@ -149,7 +149,7 @@ function validateProduct(product) {
     }
 });
 function submitOrder(orderData) {
-    fetch('/api/submit-order', {
+    fetch('/pages/api/submit-order', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
