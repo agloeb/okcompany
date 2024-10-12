@@ -6,141 +6,137 @@
 <title>O.K. cash store</title>
 <script src="https://www.paypal.com/sdk/js?client-id=AZg03j6dCGUUf2l_WuSY9RJgIDujoKnpNZB-Hh5JCdbeMT1pv4Ak3Yy6JI1Ok0GzIQj5uAAGEt31_jGW"></script>
 <style>
-    /*GENERAL*/
-    @font-face {
-        font-family: BIZMuncho;
-        src: url(fonts/BIZUDMincho-Regular.ttf);
-    }
-    @font-face {
-        font-family: BIZGothic;
-        src: url(fonts/BIZUDGothic-Regular.ttf);
-    }
+/*GENERAL*/
+@font-face {
+    font-family: BIZMuncho;
+    src: url(fonts/BIZUDMincho-Regular.ttf);
+}
+@font-face {
+    font-family: BIZGothic;
+    src: url(fonts/BIZUDGothic-Regular.ttf);
+}
+html{
+    font-family: BIZMuncho;
+    margin-left: 25px;
+}
+/*HEADER*/
+header{
+    position: sticky!important;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+.title-container{
+    display: flex;
+}
+.title, .title-img{
+    flex: 1; 
+    padding: 25px;
+}
+.title{
+    font-size: xx-large;
+    margin-top: 10px;
+}
+
+/*CART*/
+#paypal-button-container {
+    max-width: 300px;
+    margin-top: 40px;
+}
+#cart{
+    grid-column: 2;
+    position: absolute;
+    right: 25px;
+    width: 300px;
+    height: 400px;
+}
+#cart-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.total-line {
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+.cart-btn{
+    position: relative;
+    right: 0px;
+}
+.cart-item-sp{
+    border: dashed black 2px;
+    font-size: x-large;
+    word-wrap: break-word;
+}
+#submit-order-btn{
+    position: absolute;
+    right: 0;
+}
+
+/*PRODUCT-CARDS*/
+.quantity{
+    width: 50px;
+    font-family: BIZGothic;
+}
+button{
+    font-family: BIZGothic;
+}
+select {
+    font-family: BIZGothic;
+}
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px!important;
+    max-width: calc(100% - 320px);
+}
+.product-card{
+    border: dashed rgb(0, 0, 0) 2px;
+    margin: 15px;
+    width: 515px;
+}
+.product-card img{
+    width: 500px;
+}
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    margin: 15px;
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 600px) {
     html{
-        font-family: BIZMuncho;
-        margin-left: 25px;
-    }
-    /*HEADER*/
-    header{
-        position: sticky!important;
-        top: 0;
-        background-color: white;
-        z-index: 1;
-    }
-    .title-container{
-        display: flex;
-    }
-    .title, .title-img{
-        flex: 1; 
-        padding: 25px;
-    }
-    .title{
-        font-size: xx-large;
-        margin-top: 10px;
-    }
-    
-    /*CART*/
-    #paypal-button-container {
-        max-width: 300px;
-        margin-top: 40px;
-    }
-    #cart{
-        grid-column: 2;
-        position: absolute;
-        right: 25px;
-        width: 300px;
-        height: 400px;
-    }
-    #cart-summary {
-        margin-top: 20px;
-        border-top: 1px solid #ddd;
-        padding-top: 10px;
-    }
-    .summary-line {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-    }
-    .total-line {
-        font-weight: bold;
-        margin-top: 10px;
-        border-top: 1px solid #ddd;
-        padding-top: 5px;
-    }
-    .cart-btn{
-        position: relative;
-        right: 0px;
-    }
-    .cart-item-sp{
-        border: dashed black 2px;
-        font-size: x-large;
-        word-wrap: break-word;
-    }
-    #submit-order-btn{
-        position: absolute;
-        right: 0;
-    }
-    
-    /*PRODUCT-CARDS*/
-    .quantity{
-        width: 50px;
-        font-family: BIZGothic;
-    }
-    button{
-        font-family: BIZGothic;
-    }
-    select {
-        font-family: BIZGothic;
-    }
-    .product-grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px!important;
-        max-width: calc(100% - 320px);
+        margin: 0;
     }
     .product-card{
-        border: dashed rgb(0, 0, 0) 2px;
-        margin: 15px;
-        width: 515px;
+        width: 80vw;
+        height: auto;
     }
     .product-card img{
-        width: 500px;
+        width: 80vw;
     }
-    .product-info {
-        display: flex;
-        flex-direction: column;
-        align-items: start; 
-        margin: 15px;
+    .product-grid {
+        grid-template-columns: 1fr;
     }
-    
-    /*MOBILE*/
-    @media only screen and (max-width: 600px) {
-        html{
-            margin: 0;
-        }
-        .product-card{
-            width: 80vw;
-            height: auto;
-        }
-        .product-card img{
-            width: 80vw;
-        }
-        .product-grid {
-            grid-template-columns: 1fr;
-        }
-        #cart{
-            display: none;
-        }
-        #mobile-cart {
-            display: block; 
-            width: 80vw; 
-            margin-top: 20px; 
-        }
+    .product-grid {
+    grid-template-columns: 1fr;
+    margin-top: 115px;
     }
-    @media only screen and (min-width: 601px) {
-        #mobile-cart {
-            display: none; /* Hide mobile cart on larger screens */
-        }
-    }
+    #cart{
+    top: 3010px;
+    right: 0;
+    margin-bottom: 30px;
+}
+}
     </style>
     </head>
     <body>
@@ -162,12 +158,6 @@
     </header>
     <div class="container">
     <div class="product-grid" id="product-grid"></div>
-    <div id="mobile-cart" style="display: none;">
-        <h2>Shopping Cart</h2>
-        <div id="cart-items"></div>
-        <div id="cart-summary"></div>
-        <div id="paypal-button-container"></div>
-    </div>
     </div>
     <script src="/public/cashstore.js"></script>
     </body>
