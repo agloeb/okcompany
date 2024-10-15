@@ -56,8 +56,8 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 payment_method: 'paypal'
             },
             redirect_urls: {
-                return_url: https://okcompany.org/public/success, 
-                cancel_url: https://okcompany.org/public/cancel
+                return_url: 'https://okcompany.org/public/success', 
+                cancel_url: 'https://okcompany.org/public/cancel'
             },
             transactions: [{
                 amount: {
