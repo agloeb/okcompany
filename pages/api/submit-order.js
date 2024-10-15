@@ -1,4 +1,11 @@
 import nodemailer from 'nodemailer';
+import paypal from 'paypal-rest-sdk';
+
+paypal.configure({
+    mode: 'sandbox', // Change to 'live' when you're ready
+    client_id: process.env.PAYPAL_CLIENT_ID,
+    client_secret: process.env.PAYPAL_CLIENT_SECRET
+});
 
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -14,6 +21,12 @@ export default async function handler(req, res) {
             const orderData = req.body;
             console.log("Order data received:", orderData);
 
+            // Create PayPal payment
+            const payment = await createPayPalPayment(orderData.totalAmount, orderData.returnUrl, orderData.cancelUrl);
+
+            // Attach PayPal order ID to orderData for confirmation email
+            orderData.paypalOrderId = payment.id;
+
             // Send email confirmation to the customer
             await sendCustomerConfirmation(orderData);
 
@@ -21,7 +34,7 @@ export default async function handler(req, res) {
             await sendOrderInfoToSelf(orderData);
 
             // Send success response
-            res.status(200).json({ success: true, message: 'Order submitted successfully!' });
+            res.status(200).json({ success: true, message: 'Order submitted successfully!', paypalOrderId: payment.id });
 
         } catch (error) {
             // Catch and log any errors
@@ -32,6 +45,37 @@ export default async function handler(req, res) {
         console.error("Method not allowed:", req.method);        
         res.status(405).json({ success: false, message: 'Method not allowed. Use POST.' });
     }
+}
+
+async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
+    return new Promise((resolve, reject) => {
+        const paymentData = {
+            intent: 'sale',
+            payer: {
+                payment_method: 'paypal'
+            },
+            redirect_urls: {
+                return_url: returnUrl,
+                cancel_url: cancelUrl
+            },
+            transactions: [{
+                amount: {
+                    total: totalAmount,
+                    currency: 'USD' // Change as needed
+                },
+                description: 'Order Payment'
+            }]
+        };
+
+        paypal.payment.create(paymentData, (error, payment) => {
+            if (error) {
+                console.error("PayPal payment creation error:", error);
+                return reject(error);
+            }
+            console.log("PayPal payment created successfully:", payment);
+            resolve(payment);
+        });
+    });
 }
 
 async function sendCustomerConfirmation(orderData) {
