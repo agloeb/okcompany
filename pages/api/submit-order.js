@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import paypal from 'paypal-rest-sdk';
 
+// Configure PayPal SDK
 paypal.configure({
     mode: 'sandbox', // Change to 'live' when you're ready
     client_id: process.env.PAYPAL_CLIENT_ID,
@@ -39,7 +40,7 @@ export default async function handler(req, res) {
         } catch (error) {
             // Catch and log any errors
             console.error("Error processing order:", error);
-            res.status(500).json({ success: false, message: 'An error occurred while processing the order.' });
+            res.status(500).json({ success: false, message: 'An error occurred while processing the order.', error: error.message });
         }
     } else {
         console.error("Method not allowed:", req.method);        
@@ -55,12 +56,12 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 payment_method: 'paypal'
             },
             redirect_urls: {
-                return_url: returnUrl,
-                cancel_url: cancelUrl
+                return_url: returnUrl, // Add your return URL here
+                cancel_url: cancelUrl // Add your cancel URL here
             },
             transactions: [{
                 amount: {
-                    total: totalAmount,
+                    total: totalAmount.toFixed(2), // Ensure this is a string
                     currency: 'USD' // Change as needed
                 },
                 description: 'Order Payment'
