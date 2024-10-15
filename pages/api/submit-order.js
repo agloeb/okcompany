@@ -56,13 +56,13 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 payment_method: 'paypal'
             },
             redirect_urls: {
-                return_url: returnUrl, // Add your return URL here
-                cancel_url: cancelUrl // Add your cancel URL here
+                return_url: 'okcompany.org/public/success', 
+                cancel_url: 'okcompany.org/public/cancel'
             },
             transactions: [{
                 amount: {
-                    total: totalAmount.toFixed(2), // Ensure this is a string
-                    currency: 'USD' // Change as needed
+                    total: totalAmount.toFixed(2), 
+                    currency: 'USD' 
                 },
                 description: 'Order Payment'
             }]
@@ -83,8 +83,8 @@ async function sendCustomerConfirmation(orderData) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER, // Gmail address from environment variable
-            pass: process.env.EMAIL_PASS, // App password from Google or Gmail password
+            user: process.env.EMAIL_USER, 
+            pass: process.env.EMAIL_PASS, 
         },
     });
 
@@ -92,7 +92,7 @@ async function sendCustomerConfirmation(orderData) {
         from: `"O.K. cash store" <${process.env.EMAIL_USER}>`, 
         to: orderData.customerEmail, 
         subject: 'Order Confirmation', 
-        text: `Hi ${orderData.customerName},\n\nThanks for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. company`, 
+        text: `Hi ${orderData.customerName},\n\nThanks for your order! Shouldn't be long till it's on its way. Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. company`, 
     };
 
     await transporter.sendMail(mailOptions);
@@ -103,15 +103,15 @@ async function sendOrderInfoToSelf(orderData) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER, // Gmail address from environment variable
-            pass: process.env.EMAIL_PASS, // App password from Google or Gmail password
+            user: process.env.EMAIL_USER, 
+            pass: process.env.EMAIL_PASS, 
         },
     });
 
     const mailOptions = {
-        from: `"O.K. cash store" <${process.env.EMAIL_USER}>`, // Sender address (Gmail)
-        to: process.env.EMAIL_USER, // Your Gmail address (for receiving order details)
-        subject: `New Order from ${orderData.customerName}`, // Subject line
+        from: `"O.K. cash store" <${process.env.EMAIL_USER}>`, 
+        to: process.env.EMAIL_USER, 
+        subject: `New Order from ${orderData.customerName}`, 
         text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`, // Plain text body
     };
 

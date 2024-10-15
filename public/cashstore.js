@@ -208,6 +208,8 @@ function initPayPalButton() {
                 const orderData = {
                     cart: cart, // Pass the current cart
                     totalAmount: cartTotal,
+                    returnUrl: "https://okcompany.org/public/success",
+                    cancelUrl: "https://okcompany.org/public/cancel",
                     customerName: payer.name.given_name + ' ' + payer.name.surname,
                     customerEmail: payer.email_address,
                     shippingAddress: shipping.address.address_line_1 + ', ' +
