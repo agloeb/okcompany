@@ -19,9 +19,10 @@ html{
     font-family: BIZMuncho;
     margin-left: 25px;
 }
+
 /*HEADER*/
 header{
-    position: sticky!important;
+    position: sticky;
     top: 0;
     background-color: white;
     z-index: 1;
@@ -37,6 +38,26 @@ header{
     font-size: xx-large;
     margin-top: 10px;
 }
+#contact{
+    position: absolute;
+    width: 100px;
+    right: 15px;
+    bottom: 15px;
+}
+.cashstore-img{
+    position: absolute;
+    top: 50%;
+    right: 55%;
+    transform: translate(50%, -50%);
+    width: 110vw;
+    z-index: 1;
+    animation: shrink 5s 1.5s 1 forwards;
+}
+@keyframes shrink {
+    100%{
+        opacity: 0;
+    }
+}
 
 /*CART*/
 #paypal-button-container {
@@ -44,11 +65,10 @@ header{
     margin-top: 40px;
 }
 #cart{
-    grid-column: 2;
     position: absolute;
     right: 25px;
     width: 300px;
-    height: 400px;
+    height: 100vh;
 }
 #cart-summary {
     margin-top: 20px;
@@ -79,6 +99,9 @@ header{
     position: absolute;
     right: 0;
 }
+.cart-title{
+    text-align: right;
+}
 
 /*PRODUCT-CARDS*/
 .quantity{
@@ -96,20 +119,36 @@ select {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px!important;
     max-width: calc(100% - 320px);
+    z-index: 5;
 }
 .product-card{
     border: dashed rgb(0, 0, 0) 2px;
     margin: 15px;
     width: 515px;
+    background-color: rgba(255, 255, 255, 0.102);
 }
 .product-card img{
     width: 500px;
 }
 .product-info {
     display: flex;
+    background-color: none;
     flex-direction: column;
     align-items: start; 
     margin: 15px;
+}
+
+.popup {
+    position: fixed;
+    right: 30px;
+    bottom: 110px;
+    background-color: rgba(249, 0, 0, 0.812);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /*MOBILE*/
@@ -128,37 +167,64 @@ select {
         width: 80vw;
     }
     .product-grid {
-    grid-template-columns: 1fr;
-    margin-top: 115px;
+        grid-template-columns: 1fr;
+        margin-top: 115px;
     }
     #cart{
-    top: 3010px;
-    right: 0;
-    margin-bottom: 30px;
+        top: 3010px;
+        right: 0;
+        margin-bottom: 30px;
+    }
 }
-}
-    </style>
-    </head>
-    <body>
-    <header>
-        <div class="title-container">
-            <a href="/">
-                <img src="/public/img/quality ring/qualityOK.png" width="100" height="100"
-                onmouseover="this.src='img/quality ring/REDqualityOKwink.png';"
-                onmouseout="this.src='img/quality ring/qualityOK.png';"></a>
-                <div class="title">cash store</div>
-                <div id="cart">
-                    <h2>shopping cart</h2>
-                    <div id="cart-items"></div>
-                    <div id="cart-summary"></div>
-                    <div id="paypal-button-container" style="display: none;"></div>
-                    <div class="contact"><img src="/public/img/quality ring/okGlobe.gif" style="width: 300px"></div>
-                </div>
-        </div>
-    </header>
-    <div class="container">
-    <div class="product-grid" id="product-grid"></div>
+</style>
+</head>
+<body>
+<header id="header">
+    <div class="title-container">
+        <a href="/">
+            <img src="/public/img/quality ring/qualityOK.png" width="100" height="100"
+            onmouseover="this.src='/public/img/quality ring/REDqualityOKwink.png';"
+            onmouseout="this.src='/public/img/quality ring/qualityOK.png';"></a>
+            <div id="cart">
+                <h2 class="cart-title">shopping cart</h2>
+                <div id="cart-items"></div>
+                <div id="cart-summary"></div>
+                <div id="paypal-button-container"></div>
+                <div id="paypal-button-container" style="display: none;"></div>
+                <div id="contact"><div id="popup" class="popup">email copied</div>
+                <img src="/public/img/quality ring/okGlobe.gif" width="100"></div>
+            </div>
     </div>
-    <script src="/public/cashstore.js"></script>
-    </body>
-    </html>
+</header>
+<div class="container">
+    <div class="product-grid" id="product-grid"></div>
+</div>
+<img class="cashstore-img" src="/public/img/cashstore/cashstore.png">
+<p id="emailAddress" style="display: none;">addison@okcompany.org</p>
+<script src="/public/cashstore.js"></script>
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+    setTimeout(() => {
+      popup.style.opacity = '1';
+    }, 10);
+    setTimeout(function() {
+      popup.style.opacity = '0';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 300);
+    }, 2000);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+}
+
+document.getElementById('contact').addEventListener('click', function() {
+  const email = document.getElementById('emailAddress').textContent;
+  copyToClipboard(email);
+});
+</script>
+</body>
+</html>
