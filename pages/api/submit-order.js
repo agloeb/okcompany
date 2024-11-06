@@ -76,36 +76,54 @@ async function sendCustomerConfirmation(orderData) {
         port: process.env.SMTP_PORT,
         secure: process.env.SMTP_PORT === '465',
         auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS
+            user: process.env.SMTP_USER,  
+            pass: process.env.SMTP_PASS   
         }
     });
+
+    const customerMailOptions = {
+        from: `"O.K. cash store" <${process.env.SMTP_FROM}>`, 
+        to: orderData.customerEmail,
+        subject: 'Order Confirmation',
+        text: `Hi ${orderData.customerName},\n\nThank you for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. cash store`
+    };
+
+    try {
+        await transporter.sendMail(customerMailOptions);
+        console.log("Customer confirmation email sent.");
+    } catch (error) {
+        console.error("Error sending customer confirmation email:", error);
+    }
+}
 
 async function sendOrderInfoToSelf(orderData) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
-        secure: process.env.SMTP_PORT === '465',
+        secure: process.env.SMTP_PORT === '465', 
         auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS
+            user: process.env.SMTP_USER,  
+            pass: process.env.SMTP_PASS   
         }
     });
 
-    const customerMailOptions = {
-        from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
-        to: orderData.customerEmail,
-        subject: 'Order Confirmation',
-        text: `Hi ${orderData.customerName},\n\nThank you for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. cash store`
-    };
-    
     const internalMailOptions = {
         from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
-        to: process.env.SMTP_USER,
+        to: process.env.SMTP_USER,  
         subject: `New Order from ${orderData.customerName}`,
         text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
     };
 
+    try {
+        await transporter.sendMail(internalMailOptions);
+        console.log("Order info email sent to you.");
+    } catch (error) {
+        console.error("Error sending order info email to store owner:", error);
+    }
+}
+try {
     await transporter.sendMail(internalMailOptions);
     console.log("Order info email sent to you.");
-}}
+} catch (error) {
+    console.error("Error sending order info email to store owner:", error);
+}
