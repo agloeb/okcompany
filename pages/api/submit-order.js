@@ -103,7 +103,14 @@ async function sendOrderInfoToSelf(orderData) {
         }
     });
 
-    const mailOptions = {
+    const customerMailOptions = {
+        from: `"O.K. cash store" <cashstore@okcompany.org>`,
+        to: orderData.customerEmail,
+        subject: 'Order Confirmation',
+        text: `Hi ${orderData.customerName},\n\nThank you for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. cash store`
+    };
+    
+    const internalMailOptions = {
         from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
         to: process.env.SMTP_USER,
         subject: `New Order from ${orderData.customerName}`,
