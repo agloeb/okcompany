@@ -107,6 +107,8 @@ async function sendOrderInfoToSelf(orderData) {
         }
     });
 
+    console.log("SMTP_USER:", process.env.SMTP_USER);
+
     const internalMailOptions = {
         from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
         to: process.env.SMTP_USER,  
