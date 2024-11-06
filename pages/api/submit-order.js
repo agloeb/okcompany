@@ -76,7 +76,7 @@ async function sendCustomerConfirmation(orderData) {
         port: process.env.SMTP_PORT,
         secure: process.env.SMTP_PORT === '465',
         auth: {
-            user: process.env.SMTP_USER,  
+            user: 'apikey',  
             pass: process.env.SMTP_PASS   
         }
     });
@@ -102,7 +102,7 @@ async function sendOrderInfoToSelf(orderData) {
         port: process.env.SMTP_PORT,
         secure: process.env.SMTP_PORT === '465', 
         auth: {
-            user: process.env.SMTP_USER,  
+            user: 'apikey',  
             pass: process.env.SMTP_PASS   
         }
     });
