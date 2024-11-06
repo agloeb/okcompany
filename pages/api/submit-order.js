@@ -102,7 +102,7 @@ async function sendOrderInfoToSelf(orderData) {
         port: process.env.SMTP_PORT,
         secure: process.env.SMTP_PORT === '465', 
         auth: {
-            user: 'apikey',  
+            user: process.env.SMTP_USER,  
             pass: process.env.SMTP_PASS   
         }
     });
@@ -111,7 +111,7 @@ async function sendOrderInfoToSelf(orderData) {
 
     const internalMailOptions = {
         from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
-        to: process.env.SMTP_USER,  
+        to: process.env.SMTP_TO,  
         subject: `New Order from ${orderData.customerName}`,
         text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
     };
