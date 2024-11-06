@@ -113,7 +113,7 @@ async function sendOrderInfoToSelf(orderData) {
         from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
         to: process.env.SMTP_TO,  
         subject: `New Order from ${orderData.customerName}`,
-        text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
+        text: `New order from ${orderData.customerName}.\n\nOrder Details:\n${orderData.cart.map(item => `${item.name} -- ${item.quantity} x $${item.basePrice}\n${item.size} -- ${item.color}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
     };
 
     try {
