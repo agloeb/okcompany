@@ -5,6 +5,7 @@ const products = [
     { id: 4, name: 'h & i sweatshirt', basePrice: 65, image: '/public/img/cashstore/h&i_sweatshirt_front.png', sizes: ['S', 'M', 'L', 'XL'], colors: ['Ash', 'Black'] },
     { id: 5, name: 'h & i sticker', basePrice: 7, image: '/public/img/cashstore/h&i_sticker.png'},
     { id: 6, name: 'quality ring pin', basePrice: 5, image: '/public/img/cashstore/qualityring_pin.png'},
+    { id: 7, name: textureStore, basePrice: -10}
 ];
 
 let cart = [];

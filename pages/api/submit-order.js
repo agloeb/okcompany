@@ -69,24 +69,6 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
             resolve(payment);
         });
     });
-    
-    const paymentData = {
-        intent: 'sale',
-        payer: {
-            payment_method: 'paypal'
-        },
-        redirect_urls: {
-            return_url: 'https://okcompany.org/public/success',
-            cancel_url: 'https://okcompany.org/public/cancel'
-        },
-        transactions: [{
-            amount: {
-                total: '1.00', // Small test amount
-                currency: 'USD'
-            },
-            description: 'Test Order Payment'
-        }]
-    };
 }
 
 async function sendCustomerConfirmation(orderData) {
