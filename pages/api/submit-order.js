@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import paypal from 'paypal-rest-sdk';
 
-// Configure PayPal SDK
 paypal.configure({
     mode: 'sandbox', // Change to 'live' when you're ready
     client_id: process.env.PAYPAL_CLIENT_ID,
@@ -18,27 +17,19 @@ export default async function handler(req, res) {
 
     if (req.method === 'POST') {
         try {
-            // Log the incoming order data
             const orderData = req.body;
             console.log("Order data received:", orderData);
 
-            // Create PayPal payment
             const payment = await createPayPalPayment(orderData.totalAmount, orderData.returnUrl, orderData.cancelUrl);
 
-            // Attach PayPal order ID to orderData for confirmation email
             orderData.paypalOrderId = payment.id;
 
-            // Send email confirmation to the customer
             await sendCustomerConfirmation(orderData);
-
-            // Send the order info to yourself
             await sendOrderInfoToSelf(orderData);
 
-            // Send success response
             res.status(200).json({ success: true, message: 'Order submitted successfully!', paypalOrderId: payment.id });
 
         } catch (error) {
-            // Catch and log any errors
             console.error("Error processing order:", error);
             res.status(500).json({ success: false, message: 'An error occurred while processing the order.', error: error.message });
         }
@@ -56,13 +47,13 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 payment_method: 'paypal'
             },
             redirect_urls: {
-                return_url: 'https://okcompany.org/public/success', 
-                cancel_url: 'https://okcompany.org/public/cancel'
+                return_url: returnUrl || 'https://okcompany.org/public/success', 
+                cancel_url: cancelUrl || 'https://okcompany.org/public/cancel'
             },
             transactions: [{
                 amount: {
-                    total: totalAmount.toFixed(2), 
-                    currency: 'USD' 
+                    total: totalAmount.toFixed(2),
+                    currency: 'USD'
                 },
                 description: 'Order Payment'
             }]
@@ -81,18 +72,20 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
 
 async function sendCustomerConfirmation(orderData) {
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        secure: process.env.SMTP_PORT === '465',
         auth: {
-            user: process.env.EMAIL_USER, 
-            pass: process.env.EMAIL_PASS, 
-        },
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+        }
     });
 
     const mailOptions = {
-        from: `"O.K. cash store" <${process.env.EMAIL_USER}>`, 
-        to: orderData.customerEmail, 
-        subject: 'Order Confirmation', 
-        text: `Hi ${orderData.customerName},\n\nThanks for your order! Shouldn't be long till it's on its way. Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. company`, 
+        from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
+        to: orderData.customerEmail,
+        subject: 'Order Confirmation',
+        text: `Hi ${orderData.customerName},\n\nThanks for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. company`
     };
 
     await transporter.sendMail(mailOptions);
@@ -101,18 +94,20 @@ async function sendCustomerConfirmation(orderData) {
 
 async function sendOrderInfoToSelf(orderData) {
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        secure: process.env.SMTP_PORT === '465',
         auth: {
-            user: process.env.EMAIL_USER, 
-            pass: process.env.EMAIL_PASS, 
-        },
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+        }
     });
 
     const mailOptions = {
-        from: `"O.K. cash store" <${process.env.EMAIL_USER}>`, 
-        to: process.env.EMAIL_USER, 
-        subject: `New Order from ${orderData.customerName}`, 
-        text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`, // Plain text body
+        from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
+        to: process.env.SMTP_USER,
+        subject: `New Order from ${orderData.customerName}`,
+        text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
     };
 
     await transporter.sendMail(mailOptions);
