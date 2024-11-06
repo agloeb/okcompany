@@ -81,17 +81,6 @@ async function sendCustomerConfirmation(orderData) {
         }
     });
 
-    const mailOptions = {
-        from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
-        to: orderData.customerEmail,
-        subject: 'Order Confirmation',
-        text: `Hi ${orderData.customerName},\n\nThanks for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. company`
-    };
-
-    await transporter.sendMail(mailOptions);
-    console.log("Confirmation email sent to customer:", orderData.customerEmail);
-}
-
 async function sendOrderInfoToSelf(orderData) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -104,14 +93,14 @@ async function sendOrderInfoToSelf(orderData) {
     });
 
     const customerMailOptions = {
-        from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
+        from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
         to: orderData.customerEmail,
         subject: 'Order Confirmation',
         text: `Hi ${orderData.customerName},\n\nThank you for your order! Here are the details:\n\nOrder ID: ${orderData.paypalOrderId}\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\n\nThanks,\nO.K. cash store`
     };
     
     const internalMailOptions = {
-        from: `"O.K. cash store" <${process.env.SMTP_USER}>`,
+        from: `"O.K. cash store" <${process.env.SMTP_FROM}>`,
         to: process.env.SMTP_USER,
         subject: `New Order from ${orderData.customerName}`,
         text: `You have received a new order from ${orderData.customerName}.\n\nOrder Details:\n\n${orderData.cart.map(item => `${item.name} - ${item.quantity} x $${item.basePrice}`).join('\n')}\n\nTotal: $${orderData.totalAmount}\nShipping Address: ${orderData.shippingAddress}\nPayPal Order ID: ${orderData.paypalOrderId}`
@@ -119,4 +108,4 @@ async function sendOrderInfoToSelf(orderData) {
 
     await transporter.sendMail(internalMailOptions);
     console.log("Order info email sent to you.");
-}
+}}
