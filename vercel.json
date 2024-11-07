@@ -12,16 +12,8 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
       "src": "/(.*)",
       "dest": "/$1.html"
-    },
-    {
-      "src": "/cashstore",
-      "dest": "/cashstore.html"
     }
   ]
 }
