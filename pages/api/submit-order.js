@@ -13,24 +13,28 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Content-Type', 'application/json');
 
+    console.log("Request Method:", req.method);
+
     if (req.method === 'POST') {
         try {
             const orderData = req.body;
+            console.log("Order data received:", orderData);
 
             const payment = await createPayPalPayment(orderData.totalAmount, orderData.returnUrl, orderData.cancelUrl);
-            orderData.paypalOrderId = payment.paymentId;
 
-            res.status(200).json({ 
-                success: true, 
-                message: 'Payment created successfully. Redirect user to approval URL.',
-                approvalUrl: payment.approvalUrl 
-            });
+            orderData.paypalOrderId = payment.id;
+
+            await sendCustomerConfirmation(orderData);
+            await sendOrderInfoToSelf(orderData);
+
+            res.status(200).json({ success: true, message: 'Order submitted successfully!', paypalOrderId: payment.id });
 
         } catch (error) {
-            console.error("Error creating PayPal payment:", error);
-            res.status(500).json({ success: false, message: 'An error occurred while creating the PayPal payment.', error: error.message });
+            console.error("Error processing order:", error);
+            res.status(500).json({ success: false, message: 'An error occurred while processing the order.', error: error.message });
         }
     } else {
+        console.error("Method not allowed:", req.method);        
         res.status(405).json({ success: false, message: 'Method not allowed. Use POST.' });
     }
 }
@@ -39,9 +43,11 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
     return new Promise((resolve, reject) => {
         const paymentData = {
             intent: 'sale',
-            payer: { payment_method: 'paypal' },
+            payer: {
+                payment_method: 'paypal'
+            },
             redirect_urls: {
-                return_url: returnUrl || 'https://okcompany.org/public/success',
+                return_url: returnUrl || 'https://okcompany.org/public/success', 
                 cancel_url: cancelUrl || 'https://okcompany.org/public/cancel'
             },
             transactions: [{
@@ -51,6 +57,7 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 },
                 description: 'Order Payment'
             }]
+            
         };
 
         paypal.payment.create(paymentData, (error, payment) => {
@@ -58,39 +65,7 @@ async function createPayPalPayment(totalAmount, returnUrl, cancelUrl) {
                 console.error("PayPal payment creation error:", error);
                 return reject(error);
             }
-            const approvalUrl = payment.links.find(link => link.rel === 'approval_url').href;
-            resolve({ paymentId: payment.id, approvalUrl });
-        });
-    });
-}
-
-export async function executePaymentHandler(req, res) {
-    if (req.method === 'POST') {
-        const { paymentId, payerId } = req.body;
-
-        try {
-            const payment = await executePayPalPayment(paymentId, payerId);
-
-            await sendCustomerConfirmation(payment);
-            await sendOrderInfoToSelf(payment);
-
-            res.status(200).json({ success: true, message: 'Payment executed successfully!', payment });
-
-        } catch (error) {
-            console.error("Error executing PayPal payment:", error);
-            res.status(500).json({ success: false, message: 'Error executing payment.', error: error.message });
-        }
-    } else {
-        res.status(405).json({ success: false, message: 'Method not allowed. Use POST.' });
-    }
-}
-
-async function executePayPalPayment(paymentId, payerId) {
-    return new Promise((resolve, reject) => {
-        paypal.payment.execute(paymentId, { payer_id: payerId }, (error, payment) => {
-            if (error) {
-                return reject(error);
-            }
+            console.log("PayPal payment created successfully:", payment);
             resolve(payment);
         });
     });
