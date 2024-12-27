@@ -2,6 +2,10 @@
    font-family: BIZGothic;
    src: url(/public/fonts/BIZUDGothic-Regular.ttf);
  }
+ @font-face {
+   font-family: Benne;
+   src: url(fonts/Benne-Regular.ttf);
+ }
 main{
    font-family: BIZGothic;
 }
@@ -67,7 +71,7 @@ button:hover{
    position: absolute!important;
    width: 50%;
    transform-origin: center;
-   font-family:serif;
+   font-family: Benne;
 }
 .img-container{
    padding-left: 100px;
