@@ -90,3 +90,7 @@ button:hover{
    left: calc(random() * 100%);
    background-color: black;
 }
+.waterbug{
+   font-family: BIZGothic;
+   font-size: small;
+}
