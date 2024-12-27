@@ -67,6 +67,7 @@ button:hover{
    position: absolute!important;
    width: 50%;
    transform-origin: center;
+   font-family:serif;
 }
 .img-container{
    padding-left: 100px;
