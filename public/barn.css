@@ -1,0 +1,14 @@
+.container{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.silo{
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  height: auto;
+}

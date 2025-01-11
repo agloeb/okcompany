@@ -7,12 +7,13 @@
 <link rel="preload" as="image" href="/public/img/quality ring/okGlobe2.gif">
 <body>     
 </head>
-<div class="container" id="container"><img class="silo" id="gif" src="/public/img/theater/theaterZoom.gif"></div>
-<div><img src="/public/img/barn/barn.gif"></div>
+<div class="container">
+<img class="silo" id="gif" src="/public/img/theater/theaterZoom.gif">
+<img src="/public/img/barn/barn.gif">
+</div>
 </body> 
 <script>
 var gif = document.getElementById('gif')
-var body = document.querySelector('masterContainer');
 
 window.addEventListener('load', function() {
     gif.src = gif.src;
@@ -26,27 +27,5 @@ body.style.display = 'block';
 
 var duration = 5300;
 setTimeout(removeGif, duration);
-
-const gifURLs = [
-"t.gif",
-"placeholder2.gif",
-"placeholder3.gif",
-"placeholder4.gif"
-];
-
-function refreshGIFs(direction) {
-const gifs = document.querySelectorAll('.gif');
-let startIndex = 0;
-
-if (direction === 'next') {
-startIndex = Math.floor(Math.random() * (gifURLs.length - 3));
-} else if (direction === 'prev') {
-startIndex = Math.max(0, Math.floor(Math.random() * (gifURLs.length - 3)));
-}
-
-gifs.forEach((gif, index) => {
-gif.src = gifURLs[startIndex + index];
-});
-}
 </script>
 </html>
