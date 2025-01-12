@@ -1,14 +1,17 @@
-.container{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
+body{
+overflow: hidden;
 }
-.silo{
-  display: block;
-  margin: 0 auto;
-  width: 100vw;
-  height: auto;
+.container{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 100%;
+text-align: center;
+margin: 0 auto;
+}
+.gif{
+display: block;
+margin: 0 auto;
+width: 100vw;
+height: auto;
 }

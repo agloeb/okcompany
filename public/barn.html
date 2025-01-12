@@ -8,7 +8,7 @@
 <body>     
 </head>
 <div class="container">
-<img class="silo" id="gif" src="/public/img/theater/theaterZoom.gif">
+<img class="gif" id="gif" src="/public/img/theater/theaterZoom.gif">
 <img src="/public/img/barn/barn.gif" usemap="#image-map">
 <map name="image-map">
     <area onmouseover="mouseover('hollowdome')" target="" alt="hollowdome" title="hollowdome" href="" coords="248,76,217,106" shape="rect">
@@ -34,12 +34,12 @@ setTimeout(removeGif, duration);
 
 function mouseover(x){
 switch (x) {
-    case 'frontdoor':
+    case 'hollowdome':
         {
             document.getElementById("gif").src="/public/img/barn/hollowdome.gif"
         };
         break;
-    case 'frontdoor':
+    case 'silo':
     {
         document.getElementById("gif").src="/public/img/barn/silo.gif"
     };
