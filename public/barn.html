@@ -11,8 +11,8 @@
 <img class="gif" id="gif" src="/public/img/theater/theaterZoom.gif">
 <img src="/public/img/barn/barn.gif" usemap="#image-map">
 <map name="image-map">
-    <area onmouseover="mouseover('hollowdome')" target="" alt="hollowdome" title="hollowdome" href="" coords="248,76,217,106" shape="rect">
-    <area onmouseover="mouseover('silo')" target="" alt="silo" title="silo" href="" coords="48,71,11,159" shape="rect">
+    <area onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="" alt="hollowdome" title="hollowdome" href="" coords="248,76,217,106" shape="rect">
+    <area onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="" alt="silo" title="silo" href="" coords="48,71,11,159" shape="rect">
 </map>
 </div>
 </body> 
@@ -44,5 +44,8 @@ switch (x) {
         document.getElementById("gif").src="/public/img/barn/silo.gif"
     };
 }}
+function mouseleave() {
+document.getElementById("gif").src="/public/img/barn/barn.gif";
+}
 </script>
 </html>
