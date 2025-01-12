@@ -9,7 +9,11 @@
 </head>
 <div class="container">
 <img class="silo" id="gif" src="/public/img/theater/theaterZoom.gif">
-<img src="/public/img/barn/barn.gif">
+<img src="/public/img/barn/barn.gif" usemap="#image-map">
+<map name="image-map">
+    <area onmouseover="mouseover('hollowdome')" target="" alt="hollowdome" title="hollowdome" href="" coords="248,76,217,106" shape="rect">
+    <area onmouseover="mouseover('silo')" target="" alt="silo" title="silo" href="" coords="48,71,11,159" shape="rect">
+</map>
 </div>
 </body> 
 <script>
@@ -27,5 +31,18 @@ body.style.display = 'block';
 
 var duration = 5300;
 setTimeout(removeGif, duration);
+
+function mouseover(x){
+switch (x) {
+    case 'frontdoor':
+        {
+            document.getElementById("gif").src="/public/img/barn/hollowdome.gif"
+        };
+        break;
+    case 'frontdoor':
+    {
+        document.getElementById("gif").src="/public/img/barn/silo.gif"
+    };
+}}
 </script>
 </html>
