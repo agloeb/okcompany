@@ -7,7 +7,7 @@ License
 
 All Rights Reserved
 
-Copyright 2024 A. Gloeb
+Copyright 2025 A. Gloeb
 
 All rights reserved. This work is licensed under the following terms:
 
