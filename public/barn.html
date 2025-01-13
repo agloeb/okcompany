@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>rat proof fire proof</title>
+<title>rat proof     fire proof</title>
 <link rel="stylesheet" href="/public/barn.css">        
 </head>
 <body> 
 <div class="container">
 <img class="gif" id="gif" src="/public/img/theater/theaterZoom.gif">
-<img src="/public/img/barn/barn.gif" usemap="#image-map">
+<img id="barn" src="/public/img/barn/barn.gif" usemap="#image-map">
 <map name="image-map">
     <area onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="" alt="hollowdome" title="hollowdome" href="" coords="222,77,244,107" shape="rect">
     <area onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="" alt="silo" title="silo" href="" coords="13,68,47,160" shape="rect">
@@ -35,16 +35,16 @@ function mouseover(x){
 switch (x) {
     case 'hollowdome':
         {
-            document.getElementById("gif").src="/public/img/barn/hollowdome.gif"
+            document.getElementById("barn").src="/public/img/barn/hollowdome.gif"
         };
         break;
     case 'silo':
     {
-        document.getElementById("gif").src="/public/img/barn/silo.gif"
+        document.getElementById("barn").src="/public/img/barn/silo.gif"
     };
 }}
 function mouseleave() {
-document.getElementById("gif").src="/public/img/barn/barn.gif";
+document.getElementById("barn").src="/public/img/barn/barn.gif";
 }
 </script>
 </html>
