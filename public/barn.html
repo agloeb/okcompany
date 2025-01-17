@@ -5,14 +5,14 @@
 <style>
 body{
 overflow: hidden;
+margin: 0;
 }
 .container{
 position: absolute;
-top: 50%;
+top: 52%;
 transform: translateY(-50%);
 width: 100%;
 text-align: center;
-margin: 0 auto;
 }
 .gif{
 display: block;
@@ -22,75 +22,29 @@ height: auto;
 }
 area{
 cursor: default;
+pointer-events: none;
 }
 </style>       
 </head>
 <body> 
 <div class="container">
-<img class="gif" id="gif" src="/public/img/theater/theaterZoom.gif">
-<img id="barn" src="/public/img/barn/barn.gif" usemap="#image-map">
-<map name="image-map">
-    <area onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="_blank" alt="hollowdome" title="                                                                                              
-                                                                                              
-                                                                                              
-                                                                                              
-                                                                                              
-                                                                                              
-    . .  .                                                                        
-  :&&&&&&x&&x+x+.                                                                 
-.&&&&&&&&&&&&&&&&&&&&&&&:..                                                       
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$+: .                                              
-x&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$+:. .                                    
-+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&X&&&&&&&&&&&&&&&&&&&&$;:..                             
-;&&&&&$&&&&&&&$&&&&&&&&+&&$&&&&&&&&$.$&&&&&&&&&&&&&&&&&&&&&&&&&&&&x..                    
-x&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$&&&x;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&x:;:.          
-x+ :+&&&$x:;X&&&&&&&&&&&&&&&&&&&&&&&&x::+x&&&.$&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&;:: 
-..:. &&&&&&&&&&&&&&&&&&&&&&&&&+::...x&&&.&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-.&&&&&&X&&&&&&&&&&&&&&&&&&;.... ..:+&&;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-.         .  .x&&&&&&&&&&&&&&&&&&&&&&+.  . .:...:x.$&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-.              .X&&&&&&&&&&&&&&&&X&+.  .   . ..:x$x&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-       ..+&&&&&&&&&&&&&$&+:;..;;;:;....+x;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-.              .   .x&&X&&&&&&&&&..    .      ..:+;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-:               .   .$&&&&&&&&&.. .  .   .    . :X&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&$&&&&&&&.&&.          :;+&&&&&;....:; .        .+.&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&x&X.:+&& . . .    .  . . :.;.$&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&..   . .       :.  ::.&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&$&&&&&&&x&&&$.      .            .:;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$&&&&&.           ;+.;;.    .;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&x&&x...            ..;. .  . ..;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$X&;           . .   ;. .      .+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&x$x   .      ......    .      .:$&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&+$x         +&&&&X. .         ..;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&$&&&&&&&&&&&&&&&&&+:+.         x&&&&&.  . . .      .X&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&$&&&$X&x;          X&&&&&. ...         :;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&x&&&&&&$&&&&&&&&&&&$&+$x;.          X&&&&&.:. :.        .;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&$&&&&&&&&&&&X&X&&&&&$+x:    . .   X&&&&&    .  .      ..&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&X&&&&&&&&&&&$X&$;.         &&&&&&  ...          .+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&Xxx:.      .     . .  ..      .    . .&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&X&&&&x;:.       ... ..;+;  ..           x&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-$&&&&&&&&&&&&&&&&&&&&&&&&&$x;x+x.        .;..;$;    : .  .   .  ;&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&X&&&&$&&&&&&&&&&&$&&&&&&x;&;:;         ::+:;;.    . .    .    .&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&$&&&&&&&&&&&&&$$&$&&&x:;+.    .  :$&x&;X.   .         .  ;x&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&x&&&&&&&&&$&$&&&&XX$&$x&$:.:X:. .....XX:..+. . ....          &.$&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&$&&&&X&&&&$&X++x&;:... .:+x;  ;. . .           . $XX$;$+&&X&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&X&&&&&&&&&&&X&x;;:&&&&&&$&&&&&&x&X&&&X&&x;&&&&&&$&&$x&&&&&&&$&xXxx;&;:.:...;:+:+
-&&&&X&&&&x&&&&&&&:;;x..::;&&&;+;&&&X&&&&&&$&&&&&&&&&&&&&&&&&&&$&x&&&&&&&&&$&&&&&&&&&&$X&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&x&$xx;x&&&&&&&&&&&&&&&&&X&&&&&&&&&&&&&&&&&&x&&&&X&&xX$&&+;::;;&&&&&&$
-&&&$&&&&&&&&&&&&&&&&&&&$:&x$X;:;&&&$&&&x&&&&&&&x&&&&&&&&&&&&&&&&&&&&X&&X&&&&&XX&xxXx.:+&+&&&&&
-&&&&&&&&&&&&&&&&$&&&&&&&+;+$&x.$&&&&&&&&&&&&$&&&&&&&&&&&&&&&&&&&&&$&&XX++&&&&$&&+XX..X.xx&&&&&
-&&&&&&&&&&&&&&&&$&&&&&&&;+&x&+x&&&&&&&&&&&&&&&&&&&&&$&&&&&&&&&&&&&XX$$X$&&&$&&$&x:+;..:XXx$&&&
-&&&&&&&&&&&&&&&&&&&&&&$&&&&+++.X&&$&&$&&&&&&$&&&&$&&&&&&&&&$&&&&&&&&+&&+&$&x$&$&X:;.. ;Xxx&&&&
-&&&&&X&&&&$&&&&&&&&&&&&&+x&&&X;&&&$&&&&&&&&&&&$&&&&&&&&&&&&&&&&X&&&X$&XX&X&x&$Xx;;.:.x$++&&&&&
-$&&&&X&X&&&&&&&&&&&&&&&&+x&$&;:&&&&&&&&&&X&&&&x&&&&&&&&&&&$&&&&&&&&$xxx&+$xx&x$+;;....xx&X&&&&
-&&+x&&&&&&X&X&&&&&&&&&&&$&&X&x+&&&&&&&&$&X&&&&&&&&&&&&&&&&&&&&&&&&&xxXXx&+&&x+$Xx.+. +X&&+;&;&
-" href="" coords="222,77,244,107" shape="rect">
-    <area onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="_blank" alt="silo" title="I changed it to yule log. Oh, plane crashes are much better she said." href="" coords="13,68,47,160" shape="rect">
-</map>
+<img class="gif" id="gif" src="img/barn/theaterZoom.gif">
+    <div id="subcontainer" style="display: none;">
+    <img id="barn" src="img/barn/barn.gif" usemap="#image-map">
+    <map name="image-map">
+    <area id="hollowdome" onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="" alt="hollowdome" title="I never paint anything so soft as mucilage. Help me scrape it off my plate." coords="222,77,244,107" shape="rect">
+    <area id="silo" onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="" alt="silo" title="I changed it to yule log. Oh, plane crashes are much better she said." coords="13,68,47,160" shape="rect">
+    </map>
+    </div>
+    <audio id="audio_palace" loop src="barn/hollow.wav" type="wav"></audio>
+    <audio id="audio_catbird" loop src="barn/catbird.wav" type="wav"></audio>
+    </div>
 </div>
 </body> 
 <script>
 var gif = document.getElementById('gif')
 var body = document.getElementsByClassName('body')
+var gif2 = document.getElementById('subcontainer')
 
 window.addEventListener('load', function() {
     gif.src = gif.src;
@@ -102,23 +56,57 @@ gif.style.display = 'none';
 body.style.display = 'block';
 }
 
-var duration = 5300;
+function addGif2() {
+gif2.style.display = 'block';
+}
+
+var duration = 4800;
 setTimeout(removeGif, duration);
+setTimeout(addGif2, duration);
 
 function mouseover(x){
 switch (x) {
-    case 'hollowdome':
-        {
-            document.getElementById("barn").src="/public/img/barn/hollowdome.gif"
-        };
-        break;
-    case 'silo':
-    {
-        document.getElementById("barn").src="/public/img/barn/silo.gif"
-    };
+case 'hollowdome':
+{
+    document.getElementById("barn").src="img/barn/hollowdome.gif"
+};
+break;
+case 'silo':
+{
+document.getElementById("barn").src="img/barn/silo.gif"
+};
 }}
 function mouseleave() {
-document.getElementById("barn").src="/public/img/barn/barn.gif";
+document.getElementById("barn").src="img/barn/barn.gif";
 }
+
+var audio_palace = document.getElementById("audio_palace");
+var audio_catbird = document.getElementById("audio_catbird");
+var hdome = document.getElementById("hollowdome");
+var silo = document.getElementById("silo");
+
+function play1() {
+audio_palace.play();
+}
+
+function play2() {
+audio_catbird.play();
+}
+
+function stop1() {
+audio_palace.pause();
+}
+
+function stop2() {
+audio_catbird.pause();
+}
+
+silo.addEventListener('mouseover', play1)
+silo.addEventListener('mouseleave', stop1)
+silo.addEventListener9('click', play1)
+
+hdome.addEventListener('mouseover', play2)
+hdome.addEventListener('mouseleave', stop2)
+hdome.addEventListener('click', play2)
 </script>
 </html>
