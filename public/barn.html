@@ -3,6 +3,10 @@
 <head>
 <title>rat proof     fire proof</title>
 <style>
+@font-face {
+font-family: BIZGothic;
+src: url(/public/fonts/BIZUDGothic-Regular.ttf);
+}
 body{
 overflow: hidden;
 margin: 0;
@@ -24,6 +28,30 @@ area{
 cursor: default;
 pointer-events: none;
 }
+#coop_still{
+width: 436px;
+height: 432px;
+}
+.text{
+margin-top: 500px;
+left: 400px;
+width: 350px;
+font-family: BIZGothic;
+}
+.gif-alt{
+right: 0;
+}
+#timer{
+font-family: BIZGothic;
+position: absolute;
+right: 10vw;
+top: 8vh;
+font-size: xx-large;
+opacity: .6;
+filter:blur(2px);
+cursor: pointer;
+color:rgb(74, 162, 238)
+}
 </style>       
 </head>
 <body> 
@@ -31,17 +59,34 @@ pointer-events: none;
 <img class="gif" id="gif" src="img/barn/theaterZoom.gif">
     <div id="subcontainer" style="display: none;">
     <img id="barn" src="img/barn/barn.gif" usemap="#image-map">
-    <map name="image-map">
-    <area id="hollowdome" onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="" alt="hollowdome" title="I never paint anything so soft as mucilage. Help me scrape it off my plate." coords="222,77,244,107" shape="rect">
-    <area id="silo" onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="" alt="silo" title="I changed it to yule log. Oh, plane crashes are much better she said." coords="13,68,47,160" shape="rect">
-    </map>
+        <map name="image-map">
+        <area id="hollowdome" onmouseover="mouseover('hollowdome')" onmouseleave="mouseleave()" target="" alt="hollowdome" title="I never paint anything so soft as mucilage. Help me scrape it off my plate." coords="222,77,244,107" shape="rect">
+        <area id="silo" onmouseover="mouseover('silo')" onmouseleave="mouseleave()" target="" alt="silo" title="I changed it to yule log. Oh, plane crashes are much better she said." coords="13,68,47,160" shape="rect">
+        </map>
+    <img class="gif" id="coop_still" style="display: none;" src='img/barn/coop_still.gif' usemap="#image-map2">
+        <map name="image-map2">
+        <area id="plos" onmouseover="mouseover('plos')" onmouseleave="mouseleave2()"target="" alt="" title="Kyle is driving trucks across the county now so we all watch the shelves fill." coords="83,421,93,227,232,233" shape="poly">
+        <area id="thunder" onmouseover="mouseover('thunder')" onmouseleave="mouseleave2()" target="" alt="" title="It’s okay to redo your socks in your shoes before you walk through the cash store." coords="139,413,266,250,299,250,359,342,343,414" shape="poly">
+        <area target="" alt="" title="When the off chance comes round well when it finally opens up enough for Kyle to get out of town if that can be accounted for along with: picture of screw (vg+)" coords="80,428,336,97,365,115,126,429" shape="poly">
+        </map>
+    <img class="gif-alt" id="headhouse" style="display: none;" src="img/barn/headhouse.gif">
     </div>
-    <audio id="audio_palace" loop src="barn/hollow.wav" type="wav"></audio>
-    <audio id="audio_catbird" loop src="barn/catbird.wav" type="wav"></audio>
-    </div>
+<audio id="audio_palace" loop src="barn/hollow.wav" type="wav"></audio>
+<audio id="audio_catbird" loop src="barn/catbird.wav" type="wav"></audio>
 </div>
+<div class="text" id="headhouse-text" style="display: none;">
+<p>Claygut suggested the smoked turkey breasts. Just one for five of us with the creamed corn. He gave us the corn when we drove out onto his place to watch the towers light up for the first time. Like a Christmas festival without tuned and synced radios. Where do we get the gelatin, she said, I mean what aisle. I have to tell you that we can hardly see you up there, she said. Claygut coughed a smile up. When’s the last time you mowed this place? I suppose your son mows. It’s so prevalent you don’t even notice it. </p>
+</div>
+<div id="timer" href="/public/operator.html">0</div>
 </body> 
 <script>
+let count = 0;
+function updateTimer() {
+    document.getElementById('timer').innerText = count;
+    count++;
+}
+setInterval(updateTimer, 333);
+
 var gif = document.getElementById('gif')
 var body = document.getElementsByClassName('body')
 var gif2 = document.getElementById('subcontainer')
@@ -72,12 +117,26 @@ case 'hollowdome':
 };
 break;
 case 'silo':
-{
-document.getElementById("barn").src="img/barn/silo.gif"
+{    
+    document.getElementById("barn").src="img/barn/silo.gif"
 };
+break;
+case 'plos':
+{
+    document.getElementById("coop_still").src="img/barn/coop.gif"
+}
+break;
+case 'thunder':
+{
+    document.getElementById("coop_still").src="img/barn/coop_interlace.gif"
+}
 }}
+
 function mouseleave() {
 document.getElementById("barn").src="img/barn/barn.gif";
+}
+function mouseleave2() {
+document.getElementById("coop_still").src="img/barn/coop_still.gif";
 }
 
 var audio_palace = document.getElementById("audio_palace");
@@ -108,5 +167,25 @@ silo.addEventListener('click', play1)
 hdome.addEventListener('mouseover', play2)
 hdome.addEventListener('mouseleave', stop2)
 hdome.addEventListener('click', play2)
+
+setTimeout(coop, 20000)
+function coop(){
+var gif3 = document.getElementById("coop_still")
+var gif2 = document.getElementById('barn')
+
+gif3.style.display = 'block';
+gif2.style.display = 'none';
+}
+
+setTimeout(headhouse, 50000)
+function headhouse(){
+var gif3 = document.getElementById("coop_still")
+var gif4 = document.getElementById("headhouse")
+var text = document.getElementById("headhouse-text")
+
+gif3.style.display = 'none';
+gif4.style.display = 'block';
+text.style.display = 'block';
+}
 </script>
 </html>
