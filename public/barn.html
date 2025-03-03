@@ -35,8 +35,8 @@ height: 432px;
 .text{
 margin-top: 500px;
 margin-left: 425px;
-width: 350px
-font-family: BIZGothic;
+width: 350px;
+font-family:  BIZGothic;
 }
 .gif-alt{
 right: 0;
@@ -83,7 +83,7 @@ color:rgb(74, 162, 238)
 let count = 0;
 function updateTimer() {
     document.getElementById('timer').innerText = count;
-    count++;
+    count += Math.floor(Math.random() * 5) + 1;
 }
 setInterval(updateTimer, 333);
 
