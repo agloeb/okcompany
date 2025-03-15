@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>O.K. elevator</title>
+<style>
+html{
+overflow: hidden;
+}
+#coin{
+position: absolute;
+cursor: grab;
+right: 150px;
+top: 300px;
+z-index: 1;
+}
+#slot{
+position: absolute;
+left: 0px;
+top: 100px;
+}
+#screen{
+position: absolute;
+right: 100px;
+top: 50px;
+animation: flicker 1.5s;
+opacity: 1;
+}
+@keyframes flicker {
+0% {
+    opacity: 0;
+    transform: translate(1px, -1px);
+}
+8% {
+    opacity: .5;
+    transform: translate(-1px, 1px);
+}
+18% {
+    opacity: .6;
+    transform: translate(1px, -0px);
+}
+32% {
+    opacity: .6;
+    transform: translate(-1px, 1px);
+}
+44% {
+    opacity: .3;
+}
+51% {
+    opacity: .5;
+}
+62% {
+    opacity: .6;
+}
+69% {
+    opacity: .4;
+}
+81% {
+    opacity: .6;
+}
+93% {
+    opacity: .7;
+}
+100% {
+    opacity: 1;
+}
+}
+</style>
+</head>
+<body>
+<img src="img/elevator/102startslot.png" id="slot" width="600px">
+<img src="img/elevator/ok_coin_flat.png" id="coin" width="300px">
+<img src="img/elevator/screen.gif" id="screen" width="800px" style="display: none;">
+</body>
+<script>
+dragElement(document.getElementById("coin"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+    const target = document.getElementById("slot");
+    if (isOverlapping(elmnt, target)) {
+      console.log("Overlap detected!");
+      playGifOnce();
+    }
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+
+  function playGifOnce() {
+    var img1 = document.getElementById('coin');
+    var img2 = document.getElementById('slot');
+
+    img1.style.display = 'none'; 
+
+    const gifSrc = 'img/elevator/102.gif';
+    img2.src = `${gifSrc}?${new Date().getTime()}`;
+
+    const screen = document.getElementById('screen');
+    screen.style.display = 'block';
+
+    const sound = new Audio('barn/auger2.wav');
+    sound.play();
+
+    setTimeout(() => {
+        img2.src = 'img/elevator/102startslot_red.png'; 
+    }, 1400); 
+}
+}
+
+function isOverlapping(el1, el2) {
+    const rect1 = el1.getBoundingClientRect();
+    const rect2 = el2.getBoundingClientRect();
+
+    return !(
+        rect1.right < rect2.left ||
+        rect1.left > rect2.right ||
+        rect1.bottom < rect2.top ||
+        rect1.top > rect2.bottom
+    );
+}
+</script>
+</html>
